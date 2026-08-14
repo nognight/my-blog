@@ -1,0 +1,57 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+import en from '../locales/en.json';
+import ja from '../locales/ja.json';
+import zh from '../locales/zh.json';
+
+const locales = { en, ja, zh };
+---
+<!doctype html>
+<html lang="{Astro.url.searchParams.get('lang') ?? 'en'}">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<div class="about-container">
+				<div class="about-hero">
+					<h1>{locales[Astro.url.searchParams.get('lang') ?? 'en'].aboutMe}</h1>
+					<p class="about-tagline">{locales[Astro.url.searchParams.get('lang') ?? 'en'].title}</p>
+				</div>
+				
+				<div class="about-content">
+<p>
+						{locales[Astro.url.searchParams.get('lang') ?? 'en'].aboutText}
+					</p>
+					<h2>{locales[Astro.url.searchParams.get('lang') ?? 'en'].title}:</h2>
+					<ul class="specializations">
+						<li>🔧 Designing and improving large-scale backend systems</li>
+						<li>🏗️ Distributed systems and microservices architecture</li>
+						<li>☁️ Cloud-native systems on AWS and other platforms</li>
+						<li>🔧 High-concurrency services and data platforms</li>
+						<li>👥 Technical leadership and team support</li>
+					</ul>
+					
+					<h3>{locales[Astro.url.searchParams.get('lang') ?? 'en'].aboutMe}</h3>
+					<ol class="best-things">
+						<li>Design and develop backend systems and APIs</li>
+						<li>Design distributed and microservice architectures</li>
+						<li>Build high-concurrency and high-load services</li>
+						<li>Design cloud-native systems on AWS</li>
+						<li>Improve system performance and reliability</li>
+						<li>Migrate and redesign legacy systems</li>
+						<li>Design database and data storage architectures</li>
+						<li>Build CI/CD and automated deployment pipelines</li>
+						<li>Lead technical decisions and code reviews</li>
+						<li>Work across backend, frontend, infrastructure, and operations</li>
+					</ol>
+				</div>
+			</div>
+		</main>
+		<Footer />
+	</body>
+</html>

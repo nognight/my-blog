@@ -1,0 +1,86 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+import { getLocale, locales } from '../locales';
+
+const currentLang = getLocale(Astro.url.searchParams.get('lang'));
+const t = locales[currentLang];
+---
+<!doctype html>
+<html lang={currentLang}>
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<div class="home-container">
+				<h1 class="home-title">{t.homeTitle}</h1>
+				<p class="home-subtitle">{t.homeSubtitle}</p>
+
+				<div class="home-highlights">
+					<div class="highlight-card">
+						<h3>🎯 {t.aboutMe}</h3>
+						<p set:html={t.aboutMeText} />
+					</div>
+
+					<div class="highlight-card">
+						<h3>📦 {t.experience}</h3>
+						<p set:html={t.experienceText} />
+						<a class="card-link" href="/experience">{t.experience} →</a>
+					</div>
+
+					<div class="highlight-card">
+						<h3>💡 {t.skills}</h3>
+						<p set:html={t.skillsText} />
+						<a class="card-link" href="/skills">{t.skills} →</a>
+					</div>
+
+					<div class="highlight-card">
+						<h3>🛠️ {t.technicalLeadership}</h3>
+						<p set:html={t.technicalLeadershipText} />
+						<a class="card-link" href="/technical-leadership">{t.technicalLeadership} →</a>
+					</div>
+
+					<div class="highlight-card">
+						<h3>💭 {t.developmentPhilosophy}</h3>
+						<p set:html={t.developmentPhilosophyText} />
+						<a class="card-link" href="/development-philosophy">{t.developmentPhilosophy} →</a>
+					</div>
+
+					<div class="highlight-card">
+						<h3>🤖 {t.aiAssistedDevelopment}</h3>
+						<p set:html={t.aiAssistedDevelopmentText} />
+						<a class="card-link" href="/ai-assisted-development">{t.aiAssistedDevelopment} →</a>
+					</div>
+
+					<div class="highlight-card">
+						<h3>🎓 {t.education}</h3>
+						<p set:html={t.educationText} />
+					</div>
+
+					<div class="highlight-card">
+						<h3>🔍 {t.lookingFor}</h3>
+						<p set:html={t.lookingForText} />
+					</div>
+				</div>
+
+			</div>
+		</main>
+		<Footer />
+	</body>
+</html>
+<style>
+	.card-link {
+		display: inline-block;
+		margin-top: 0.75em;
+		font-weight: bold;
+		color: var(--accent);
+		text-decoration: none;
+	}
+	.card-link:hover {
+		text-decoration: underline;
+	}
+</style>

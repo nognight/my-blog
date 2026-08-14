@@ -1,0 +1,66 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+import en from '../locales/en.json';
+import ja from '../locales/ja.json';
+import zh from '../locales/zh.json';
+
+const locales = { en, ja, zh };
+---
+<!doctype html>
+<html lang="{Astro.url.searchParams.get('lang') ?? 'en'}">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<div class="technical-leadership-container">
+				<div class="tech-lead-hero">
+					<h1>{locales[Astro.url.searchParams.get('lang') ?? 'en'].technicalLeadership}</h1>
+					<p>{locales[Astro.url.searchParams.get('lang') ?? 'en'].homeSubtitle}</p>
+				</div>
+				
+				<div class="architecture-section">
+					<h2>Architecture</h2>
+					<ul>
+						<li>System architecture design</li>
+						<li>Technology selection</li>
+						<li>API design</li>
+						<li>Database architecture</li>
+						<li>Cloud architecture</li>
+						<li>Microservice design</li>
+						<li>Performance architecture</li>
+					</ul>
+				</div>
+				
+				<div class="engineering-quality-section">
+					<h2>Engineering Quality</h2>
+					<ul>
+						<li>Code review</li>
+						<li>Design review</li>
+						<li>Static analysis</li>
+						<li>Coding standards</li>
+						<li>Technical documentation</li>
+						<li>Architecture visualization</li>
+					</ul>
+				</div>
+				
+				<div class="team-support-section">
+					<h2>Team Support</h2>
+					<ul>
+						<li>Technical mentoring</li>
+						<li>Problem solving</li>
+						<li>Task decomposition</li>
+						<li>Technical decision making</li>
+						<li>Development process improvement</li>
+					</ul>
+					<p>Tools: Jira, Confluence, Redmine, Mermaid, UML, ESLint, SonarLint</p>
+				</div>
+			</div>
+		</main>
+		<Footer />
+	</body>
+</html>

@@ -1,0 +1,48 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<div class="ai-assisted-container">
+				<div class="ai-hero">
+					<h1>AI-Assisted Development</h1>
+					<p>I actively use modern AI-assisted development techniques to improve engineering productivity.</p>
+				</div>
+				
+				rather than relying on AI simply for code generation, I use it throughout the development process:
+				<ol>
+					<li>Requirement</li>
+					<li>Task Decomposition</li>
+					<li>Context Preparation</li>
+					<li>Architecture / Design</li>
+					<li>Implementation</li>
+					<li>Review</li>
+					<li>Testing</li>
+					<li>Optimization</li>
+				</ol>
+				
+				The goal is to reduce repetitive implementation work while spending more engineering time on:
+				<ul>
+					<li>System architecture</li>
+					<li>Business understanding</li>
+					<li>Performance</li>
+					<li>Reliability</li>
+					<li>Technical decision making</li>
+				</ul>
+				
+				This approach allows rapid prototyping while maintaining engineering quality.
+			</div>
+		</main>
+		<Footer />
+	</body>
+</html>

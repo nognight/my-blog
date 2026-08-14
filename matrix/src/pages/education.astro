@@ -1,0 +1,30 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<div class="education-container">
+				<div class="edu-hero">
+					<h1>Education</h1>
+				</div>
+				
+				<p><strong>B.S. in Computer Science / Information Engineering</strong></p>
+				<p>Civil Aviation Flight University of China</p>
+				<p>2011 — 2015</p>
+				
+				My educational background provided a strong foundation in computer science and information engineering, focusing on the principles that have guided my career in software engineering and distributed systems development.
+			</div>
+		</main>
+		<Footer />
+	</body>
+</html>

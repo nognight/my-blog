@@ -1,0 +1,179 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+import en from '../locales/en.json';
+import ja from '../locales/ja.json';
+import zh from '../locales/zh.json';
+
+const locales = { en, ja, zh };
+---
+<!doctype html>
+<html lang="{Astro.url.searchParams.get('lang') ?? 'en'}">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<div class="experience-container">
+				<div class="experience-hero">
+					<h1>{locales[Astro.url.searchParams.get('lang') ?? 'en'].experience}</h1>
+					<p>{locales[Astro.url.searchParams.get('lang') ?? 'en'].homeTitle}</p>
+				</div>
+				
+				<div class="timeline">
+					<!-- 2015 - 2016 -->
+					<div class="timeline-item">
+						<div class="timeline-header">
+							<h3>2015 — 2016</h3>
+							<span>ZTE · Software Engineer</span>
+						</div>
+						<div class="timeline-body">
+							<h4>RCS Integrated Communication System</h4>
+							<p>Started my career working on cloud communication infrastructure and system operations.</p>
+							<ul>
+								<li>Developed system monitoring tools</li>
+								<li>System testing</li>
+								<li>Production maintenance</li>
+								<li>Data center deployment</li>
+								<li>Automation using Python and Bash</li>
+							</ul>
+							<p class="technologies">Technologies: Java, Python, Bash, Linux, SUSE</p>
+						</div>
+					</div>
+					
+					<!-- 2016 - 2018 -->
+					<div class="timeline-item">
+						<div class="timeline-header">
+							<h3>2016 — 2018</h3>
+							<span>Nanjing HANHONG · Software Engineer / Sub Tech Lead</span>
+						</div>
+						<div class="timeline-body">
+							<h4>WeChat Official Account Platform</h4>
+							<p>Developed enterprise systems for telecom operators, including Web applications and integrations with external systems.</p>
+							<ul>
+								<li>Requirements analysis</li>
+								<li>System design</li>
+								<li>Web application development</li>
+								<li>External system integration</li>
+								<li>API/interface design</li>
+							</ul>
+							<h5>Highlights</h5>
+							<ul>
+								<li>Developed systems for China Unicom and China Telecom</li>
+								<li>Developed WeChat Mini Programs</li>
+								<li>Received Partner Award in 2017</li>
+								<li>Received Innovation Cooperation Contribution Award in 2018</li>
+							</ul>
+							<p class="technologies">Technologies: Java, JavaScript, Python, Lua, Redis, MySQL, MongoDB, Linux</p>
+						</div>
+					</div>
+					
+					<!-- 2018 - 2020 -->
+					<div class="timeline-item">
+						<div class="timeline-header">
+							<h3>2018 — 2020</h3>
+							<span>China Unicom Shanghai · Tech Lead</span>
+						</div>
+						<div class="timeline-body">
+							<h4>Privilege Center Platform</h4>
+							<p>Led the development of a large enterprise web platform integrating multiple external services.</p>
+							<ul>
+								<li>System architecture and design</li>
+								<li>Backend development</li>
+								<li>Frontend development</li>
+								<li>External API integration</li>
+								<li>Technical leadership</li>
+							</ul>
+							<h5>Highlights</h5>
+							<ul>
+								<li>Payment Integration: WeChat Pay, Alipay, WoPay</li>
+								<li>Identity & Account Integration: JD.com membership system using OAuth 2.0</li>
+								<li>Internal Platform: Invoice statistics system</li>
+							</ul>
+							<p class="technologies">Technologies: Vue.js, JavaScript, Python, Alibaba Cloud, OAuth 2.0</p>
+						</div>
+					</div>
+					
+					<!-- 2020 - 2021 -->
+					<div class="timeline-item">
+						<div class="timeline-header">
+							<h3>2020 — 2021</h3>
+							<span>Synergy · Software Engineer</span>
+						</div>
+						<div class="timeline-body">
+							<h4>Enterprise Systems</h4>
+							<p>Worked on multiple enterprise systems covering data platforms, healthcare systems, and cloud migration.</p>
+							<div class="highlights">
+								<h5>Data Platform / DWH</h5>
+								<p>DWH architecture and development, Data import tool development, AWS development environment, Testing and deployment</p>
+								<h5>Healthcare System</h5>
+								<p>Bug fixing, Database performance optimization, New feature development</p>
+								<h5>KINTO Nimbus — Cloud Migration & CI/CD</h5>
+								<p>AWS migration, CI/CD architecture, Performance optimization, New feature development, Deployment automation</p>
+							</div>
+							<p class="technologies">Technologies: Java, Python, AWS, JavaScript, Node.js, AngularJS, MongoDB</p>
+						</div>
+					</div>
+					
+					<!-- 2021 - 2023 -->
+					<div class="timeline-item">
+						<div class="timeline-header">
+							<h3>2021 — 2023</h3>
+							<span>New Idea · Software Engineer / Sub Tech Lead</span>
+						</div>
+						<div class="timeline-body">
+							<h4>Rakuten Authentication Storage Migration</h4>
+							<p>Large-scale system modernization project involving migration of an existing authentication storage architecture.</p>
+							<ul>
+								<li>Technical investigation</li>
+								<li>Architecture design</li>
+								<li>Detailed design</li>
+								<li>Backend development</li>
+								<li>Production deployment</li>
+								<li>System monitoring</li>
+								<li>Incident investigation</li>
+								<li>Performance optimization</li>
+								<li>Production data maintenance</li>
+								<li>Code review</li>
+								<li>Technical support</li>
+							</ul>
+							<h5>Key Achievement</h5>
+							<p>Successfully migrated a large-scale production storage system from Oracle to Cassandra.</p>
+							<p class="technologies">Technologies: Kotlin, Vert.x, Coroutines, Cassandra, Kubernetes, GCP, GitLab CI, ELK</p>
+						</div>
+					</div>
+					
+					<!-- 2023 - 2026 -->
+					<div class="timeline-item">
+						<div class="timeline-header">
+							<h3>2023 — 2026</h3>
+							<span>IP Consulting · Software Engineer / Tech Lead</span>
+						</div>
+						<div class="timeline-body">
+							<h4>Golf Management Platform</h4>
+							<p>Worked as a Tech Lead on a modern cloud-based golf management platform.</p>
+							<ul>
+								<li>High-concurrency online services</li>
+								<li>Golf course management functionality</li>
+								<li>External integrations</li>
+								<li>Real-time scoring features</li>
+							</ul>
+							<h5>Key Projects</h5>
+							<ul>
+								<li><strong>Caddie Evaluation System</strong> - Designed and developed a new caddie evaluation feature</li>
+								<li><strong>GORA Integration</strong> - Integrated golf course internal scoring systems with GORA</li>
+								<li><strong>Golf Association Website Migration</strong> - Migrated to AWS</li>
+								<li><strong>Online Competition Platform</strong> - Designed for high-concurrency traffic</li>
+							</ul>
+							<p class="technologies">Technologies: Go, Gin, TypeScript, React, Next.js, AWS, CircleCI</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+		<Footer />
+	</body>
+</html>

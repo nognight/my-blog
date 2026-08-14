@@ -1,0 +1,101 @@
+---
+import { SITE_TITLE } from '../consts';
+import HeaderLink from './HeaderLink.astro';
+import { getLocale, isSupportedLocale, locales } from '../locales';
+
+const langParam = Astro.url.searchParams.get('lang');
+const pathname = Astro.url.pathname.replace(import.meta.env.BASE_URL, '');
+const isHome = pathname === '' || pathname === '/';
+const currentLang = getLocale(langParam);
+// Language switching only affects the home page (index.astro).
+const translate = isHome && isSupportedLocale(langParam);
+const t = locales[currentLang];
+const langSuffix = translate ? `?lang=${currentLang}` : '';
+
+const links = [
+	{ href: '/', label: 'Home', key: 'home' },
+	{ href: '/about', label: 'About Me', key: 'about' },
+	{ href: '/experience', label: 'Experience', key: 'experience' },
+	{ href: '/blog', label: 'Blog', key: 'blog' },
+] as const;
+---
+
+<header>
+	<nav>
+		<h2><a href="/">{SITE_TITLE}</a></h2>
+		<div class="internal-links">
+			{links.map((link) => (
+				<HeaderLink href={link.href + langSuffix}>
+					{translate ? t[link.key] : link.label}
+				</HeaderLink>
+			))}
+		</div>
+		<div class="lang-switcher" aria-label="Language switcher">
+			{Object.entries(locales).map(([code, strings]) => (
+				<a
+					href={`/?lang=${code}`}
+					class:list={{ active: isHome && code === currentLang }}
+				>
+					{strings.lang}
+				</a>
+			))}
+		</div>
+	</nav>
+</header>
+<style>
+	header {
+		margin: 0;
+		padding: 0 1em;
+		background: white;
+		box-shadow: 0 2px 8px rgba(var(--black), 5%);
+	}
+	h2 {
+		margin: 0;
+		font-size: 1em;
+	}
+	nav {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+	nav a {
+		padding: 1em 0.5em;
+		color: var(--black);
+		border-bottom: 4px solid transparent;
+		text-decoration: none;
+	}
+	nav a.active {
+		text-decoration: none;
+		border-bottom-color: var(--accent);
+	}
+	.lang-switcher {
+		display: flex;
+		align-items: center;
+		gap: 0.25em;
+		padding: 0 0.5em;
+	}
+	.lang-switcher a {
+		padding: 0.4em 0.6em;
+		border: 1px solid rgba(var(--black), 15%);
+		border-radius: 4px;
+		font-size: 0.85em;
+		line-height: 1;
+	}
+	.lang-switcher a.active {
+		border-color: var(--accent);
+		background: var(--accent);
+		color: white;
+		font-weight: bold;
+	}
+	@media (max-width: 900px) {
+		nav {
+			flex-wrap: wrap;
+		}
+		.lang-switcher {
+			order: 3;
+			width: 100%;
+			justify-content: flex-end;
+			padding-bottom: 0.5em;
+		}
+	}
+</style>

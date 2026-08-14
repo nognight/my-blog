@@ -1,0 +1,147 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+import en from '../locales/en.json';
+import ja from '../locales/ja.json';
+import zh from '../locales/zh.json';
+
+const locales = { en, ja, zh };
+---
+<!doctype html>
+<html lang="{Astro.url.searchParams.get('lang') ?? 'en'}">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<div class="skills-container">
+				<div class="skills-hero">
+					<h1>{locales[Astro.url.searchParams.get('lang') ?? 'en'].skills}</h1>
+					<p>{locales[Astro.url.searchParams.get('lang') ?? 'en'].title}</p>
+				</div>
+				
+				<div class="skills-grid">
+					<!-- Backend Engineering -->
+					<div class="skill-category">
+						<h3>🔧 Backend Engineering</h3>
+						<ul>
+							<li>Java</li>
+							<li>Kotlin</li>
+							<li>Go</li>
+							<li>Python</li>
+							<li>Vert.x</li>
+							<li>Spring Boot</li>
+							<li>Gin</li>
+							<li>REST APIs</li>
+							<li>Microservices</li>
+							<li>Distributed systems</li>
+							<li>Concurrent programming</li>
+							<li>External API integration</li>
+						</ul>
+					</div>
+					
+					<!-- Distributed Systems -->
+					<div class="skill-category">
+						<h3>🏗️ Distributed Systems</h3>
+						<ul>
+							<li>Microservice architecture</li>
+							<li>Service-to-service communication</li>
+							<li>API design</li>
+							<li>Distributed data storage</li>
+							<li>High-concurrency systems</li>
+							<li>Fault analysis</li>
+							<li>Performance optimization</li>
+							<li>Production troubleshooting</li>
+							<li>System modernization</li>
+						</ul>
+					</div>
+					
+					<!-- Cloud & Infrastructure -->
+					<div class="skill-category">
+						<h3>☁️ Cloud & Infrastructure</h3>
+						<ul>
+							<li>AWS</li>
+							<li>Application architecture</li>
+							<li>Compute and networking</li>
+							<li>Database services</li>
+							<li>Storage</li>
+							<li>Monitoring</li>
+							<li>Production deployment</li>
+							<li>High-load architecture</li>
+							<li>Cloud migration</li>
+							<li>Google Cloud Platform</li>
+							<li>Alibaba Cloud</li>
+							<li>Kubernetes</li>
+							<li>Docker</li>
+							<li>Linux</li>
+							<li>CI/CD</li>
+							<li>Monitoring</li>
+							<li>Logging</li>
+							<li>Production operations</li>
+						</ul>
+					</div>
+					
+					<!-- Frontend Engineering -->
+					<div class="skill-category">
+						<h3>🎨 Frontend Engineering</h3>
+						<ul>
+							<li>TypeScript</li>
+							<li>JavaScript</li>
+							<li>React</li>
+							<li>Next.js</li>
+							<li>Vue.js</li>
+						</ul>
+					</div>
+					
+					<!-- Databases -->
+					<div class="skill-category">
+						<h3>💾 Databases</h3>
+						<ul>
+							<li>MySQL</li>
+							<li>Redis</li>
+							<li>Cassandra</li>
+							<li>MongoDB</li>
+						</ul>
+					</div>
+					
+					<!-- CI/CD -->
+					<div class="skill-category">
+						<h3>🔄 CI/CD</h3>
+						<ul>
+							<li>GitHub Actions</li>
+							<li>GitLab CI</li>
+							<li>CircleCI</li>
+						</ul>
+					</div>
+					
+					<!-- Development & Architecture -->
+					<div class="skill-category">
+						<h3>📋 Development & Architecture</h3>
+						<ul>
+							<li>Microservices</li>
+							<li>Distributed Systems</li>
+							<li>Cloud Architecture</li>
+							<li>Code Review</li>
+							<li>Design review</li>
+							<li>Static analysis</li>
+							<li>Coding standards</li>
+							<li>Technical documentation</li>
+							<li>Architecture visualization</li>
+							<li>Jira</li>
+							<li>Confluence</li>
+							<li>Redmine</li>
+							<li>Mermaid</li>
+							<li>UML</li>
+							<li>ESLint</li>
+							<li>SonarLint</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</main>
+		<Footer />
+	</body>
+</html>

@@ -1,0 +1,38 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<div class="looking-for-container">
+				<div class="lf-hero">
+					<h1>What I Am Looking For</h1>
+					<p>I am interested in opportunities where I can contribute as a <strong>Senior Software Engineer / Tech Lead</strong>, particularly in teams working on:</p>
+				</div>
+				
+				<ul class="opportunity-areas">
+					<li>Backend systems</li>
+					<li>Distributed systems</li>
+					<li>Cloud-native applications</li>
+					<li>High-scale web services</li>
+					<li>Platform engineering</li>
+					<li>Developer infrastructure</li>
+					<li>System modernization</li>
+					<li>Architecture and technical leadership</li>
+				</ul>
+				
+				p I am especially interested in environments where engineers are encouraged to take ownership of architecture and product-level technical decisions.
+			</div>
+		</main>
+		<Footer />
+	</body>
+</html>
