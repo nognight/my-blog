@@ -1,0 +1,2 @@
+# put your real NVIDIA API key here for local development
+NVAPI_KEY=nvapi-your-key-here
