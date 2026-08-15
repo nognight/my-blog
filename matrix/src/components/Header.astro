@@ -14,8 +14,6 @@ const links = [
 	{ href: '/about', label: 'About', key: 'about' },
 	{ href: '/experience', label: 'Experience', key: 'experience' },
 	{ href: '/skills', label: 'Skills', key: 'skills' },
-	{ href: '/technical-leadership', label: 'Technical Leadership', key: 'technicalLeadership' },
-	{ href: '/development-philosophy', label: 'Development Philosophy', key: 'developmentPhilosophy' },
 	{ href: '/blog', label: 'Blog', key: 'blog' },
 ] as const;
 ---
@@ -89,11 +87,36 @@ const links = [
 		nav {
 			flex-wrap: wrap;
 		}
+		.internal-links {
+			display: flex;
+			flex-wrap: wrap;
+			order: 2;
+			width: 100%;
+		}
 		.lang-switcher {
 			order: 3;
 			width: 100%;
 			justify-content: flex-end;
 			padding-bottom: 0.5em;
+		}
+	}
+	@media (max-width: 600px) {
+		header {
+			padding: 0 0.5em;
+		}
+		h2 {
+			font-size: 0.9em;
+		}
+		nav a {
+			padding: 0.6em 0.4em;
+			font-size: 0.85em;
+		}
+		.lang-switcher {
+			padding: 0 0.25em 0.5em;
+		}
+		.lang-switcher a {
+			padding: 0.35em 0.5em;
+			font-size: 0.75em;
 		}
 	}
 </style>

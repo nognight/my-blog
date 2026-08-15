@@ -121,7 +121,9 @@ input {
 }
 
 table {
+	display: block;
 	width: 100%;
+	overflow-x: auto;
 	border-collapse: collapse;
 }
 
@@ -148,6 +150,7 @@ code {
 pre {
 	padding: 1.5em;
 	border-radius: 8px;
+	overflow-x: auto;
 	background-color: rgb(var(--gray-light));
 	border: 1px solid rgba(0, 240, 255, 25%);
 	box-shadow: 0 0 20px rgba(0, 240, 255, 10%) inset;
@@ -176,6 +179,26 @@ hr {
 	}
 
 	main {
+		padding: 1em;
+	}
+
+	h1 {
+		font-size: 2.441em;
+	}
+
+	h2 {
+		font-size: 1.953em;
+	}
+
+	h3 {
+		font-size: 1.563em;
+	}
+
+	h4 {
+		font-size: 1.25em;
+	}
+
+	pre {
 		padding: 1em;
 	}
 }
