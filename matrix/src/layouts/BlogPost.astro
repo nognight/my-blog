@@ -5,13 +5,16 @@ import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
 import Header from '../components/Header.astro';
+import { getLocale, locales } from '../locales';
 
 type Props = CollectionEntry<'blog'>['data'];
 
 const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+const currentLang = getLocale(Astro.url.searchParams.get('lang'));
+const t = locales[currentLang];
 ---
 
-<html lang="en">
+<html lang={currentLang}>
 	<head>
 		<BaseHead title={title} description={description} />
 		<style>
@@ -69,7 +72,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 							{
 								updatedDate && (
 									<div class="last-updated-on">
-										Last updated on <FormattedDate date={updatedDate} />
+										{t.lastUpdated} <FormattedDate date={updatedDate} />
 									</div>
 								)
 							}

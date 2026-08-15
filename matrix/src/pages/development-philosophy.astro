@@ -3,10 +3,13 @@ import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
----
+import { getLocale, locales } from '../locales';
 
+const currentLang = getLocale(Astro.url.searchParams.get('lang'));
+const t = locales[currentLang];
+---
 <!doctype html>
-<html lang="en">
+<html lang={currentLang}>
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
@@ -15,80 +18,44 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 		<main>
 			<div class="development-philosophy-container">
 				<div class="dp-hero">
-					<h1>Development Philosophy</h1>
-					<p>
-						I approach engineering problems through a continuous 
-						<strong> Why → What → How → Why </strong>cycle.
-					</p>
+					<h1>{t.developmentPhilosophy}</h1>
+					<p set:html={t.developmentPhilosophyText} />
 				</div>
 
 				<div class="dp-cycle">
 					<div class="dp-step">
-						<h2>Why</h2>
-						<p>
-							Why does the problem exist?
-							Before implementing a solution, I first identify the root cause,
-							the actual business or technical problem, and the constraints
-							around it.
-						</p>
+						<h2>{t.dpWhyTitle}</h2>
+						<p>{t.dpWhyText}</p>
 					</div>
 
 					<div class="dp-step">
-						<h2>What</h2>
-						<p>
-							What needs to be done to solve the problem?
-							I evaluate possible approaches, trade-offs, and the impact of
-							each decision before choosing what to build or change.
-						</p>
+						<h2>{t.dpWhatTitle}</h2>
+						<p>{t.dpWhatText}</p>
 					</div>
 
 					<div class="dp-step">
-						<h2>How</h2>
-						<p>
-							How should it be implemented, and how can we ensure it works?
-							I consider architecture, implementation details, testing,
-							observability, and operational requirements.
-						</p>
+						<h2>{t.dpHowTitle}</h2>
+						<p>{t.dpHowText}</p>
 
 						<ul>
-							<li>Scalability</li>
-							<li>Reliability</li>
-							<li>Maintainability</li>
-							<li>Observability</li>
-							<li>Performance</li>
-							<li>Operational complexity</li>
-							<li>Long-term technical debt</li>
+							{t.dpHowItems.map((item) => (
+								<li>{item}</li>
+							))}
 						</ul>
 					</div>
 
 					<div class="dp-step">
-						<h2>Why — Again</h2>
-						<p>
-							Why did the system behave differently from what we expected?
-							After implementation, I verify the result against the original
-							problem and continuously investigate unexpected behavior.
-						</p>
+						<h2>{t.dpWhyAgainTitle}</h2>
+						<p>{t.dpWhyAgainText}</p>
 					</div>
 				</div>
 
 				<div class="dp-iteration">
-					<p>
-						Unexpected behavior is not simply a failure — it is new information.
-						I use it to revisit the <strong>Why</strong>, redefine the
-						<strong> What</strong>, improve the <strong>How</strong>, and continue
-						the cycle.
-					</p>
-
-					<p>
-						<strong> Why → What → How → Why → What → How → ...</strong>
-					</p>
+					<p set:html={t.dpIterationText} />
+					<p set:html={t.dpIterationCycle} />
 				</div>
 
-				<p class="dp-summary">
-					This approach helps me avoid solving symptoms instead of root causes,
-					while balancing technical quality, business requirements, and
-					long-term system health.
-				</p>
+				<p class="dp-summary">{t.dpSummary}</p>
 			</div>
 		</main>
 		<Footer />

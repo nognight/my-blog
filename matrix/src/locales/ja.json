@@ -20,7 +20,129 @@
   "skillsText": "バックエンド: Java, Kotlin, Go, Python, Spring Boot, Gin, Microservices. フロントエンド: React, Next.js, Vue.js. クラウド: AWS, GCP, Kubernetes. データベース: MySQL, Redis, Cassandra, MongoDB.",
   "technicalLeadershipText": "キャリアを通じて、個人の開発に加え技術的リーダーシップの責任を担ってきました。アーキテクチャ設計、技術選定、チームメンタリングに焦点を当てています。",
   "developmentPhilosophyText": "私はエンジニアリングの問題に、継続的な<strong>Why → What → How → Why</strong>のサイクルで取り組みます。",
+  "dpWhyTitle": "なぜ（Why）",
+  "dpWhyText": "なぜ問題が存在するのか？解決策を実装する前に、まず根本原因、実際のビジネスまたは技術的な問題、そしてそれを取り巻く制約を特定します。",
+  "dpWhatTitle": "何を（What）",
+  "dpWhatText": "問題を解決するために何をする必要があるのか？何を構築または変更するかを選ぶ前に、考えられるアプローチ、トレードオフ、各決定の影響を評価します。",
+  "dpHowTitle": "どのように（How）",
+  "dpHowText": "どのように実装すべきか、そして確実に機能することをどう保証するのか？アーキテクチャ、実装の詳細、テスト、可観測性、運用上の要件を考慮します。",
+  "dpHowItems": ["スケーラビリティ", "信頼性", "保守性", "可観測性", "パフォーマンス", "運用の複雑さ", "長期的な技術的負債"],
+  "dpWhyAgainTitle": "なぜ、もう一度（Why — Again）",
+  "dpWhyAgainText": "なぜシステムが予想と異なる挙動をしたのか？実装後、元の問題に対する結果を検証し、予期しない挙動を継続的に調査します。",
+  "dpIterationText": "予期しない挙動は単なる失敗ではなく、新しい情報です。それを使って<strong>Why（なぜ）</strong>を見直し、<strong>What（何を）</strong>を再定義し、<strong>How（どのように）</strong>を改善して、サイクルを続けます。",
+  "dpIterationCycle": "<strong>Why → What → How → Why → What → How → ...</strong>",
+  "dpSummary": "このアプローチにより、根本原因ではなく症状を解決してしまうことを避けながら、技術品質、ビジネス要件、長期的なシステム健全性のバランスを取ることができます。",
   "aiAssistedDevelopmentText": "開発プロセス全体で最新のAI支援開発手法を積極的に活用しています: 要件定義 → タスク分解 → コンテキスト準備 → アーキテクチャ/設計 → 実装 → レビュー → テスト → 最適化。",
   "educationText": "コンピュータサイエンス/情報工学の学士号、中国民用航空飛行学院、2011-2015年。",
-  "lookingForText": "バックエンドシステム、分散システム、クラウドネイティブアプリケーション、プラットフォームエンジニアリングに取り組むチームで、シニアソフトウェアエンジニア/テックリードとして貢献できる機会に関心があります。"
+  "lookingForText": "バックエンドシステム、分散システム、クラウドネイティブアプリケーション、プラットフォームエンジニアリングに取り組むチームで、シニアソフトウェアエンジニア/テックリードとして貢献できる機会に関心があります。",
+  "lastUpdated": "最終更新",
+  "aboutText": "中国と日本で11年以上の経験を持つバックエンド中心のソフトウェアエンジニア。分散システム、マイクロサービス、クラウドネイティブアーキテクチャを専門とし、フロントエンドからインフラ、CI/CDまでフルスタックをカバーしています。",
+  "specializations": [
+    "🔧 大規模バックエンドシステムの設計と改善",
+    "🏗️ 分散システムとマイクロサービスアーキテクチャ",
+    "☁️ AWSなどのクラウドネイティブシステム",
+    "🔧 高並行サービスとデータ基盤",
+    "👥 技術的リーダーシップとチームサポート"
+  ],
+  "bestThings": [
+    "バックエンドシステムとAPIの設計・開発",
+    "分散・マイクロサービスアーキテクチャの設計",
+    "高並行・高負荷サービスの構築",
+    "AWS上のクラウドネイティブシステムの設計",
+    "システムのパフォーマンスと信頼性の向上",
+    "レガシーシステムの移行・再設計",
+    "データベースとデータストレージのアーキテクチャ設計",
+    "CI/CDと自動デプロイパイプラインの構築",
+    "技術的な意思決定とコードレビューのリード",
+    "バックエンド、フロントエンド、インフラ、運用を横断して対応"
+  ],
+  "skillsCategories": [
+    { "title": "🔧 バックエンドエンジニアリング", "items": ["Java", "Kotlin", "Go", "Python", "Vert.x", "Spring Boot", "Gin", "REST API", "マイクロサービス", "分散システム", "並行プログラミング", "外部API連携"] },
+    { "title": "🏗️ 分散システム", "items": ["マイクロサービスアーキテクチャ", "サービス間通信", "API設計", "分散データストレージ", "高並行システム", "障害解析", "パフォーマンス最適化", "本番環境のトラブルシューティング", "システムモダナイゼーション"] },
+    { "title": "☁️ クラウド & インフラ", "items": ["AWS", "アプリケーションアーキテクチャ", "コンピューティングとネットワーク", "データベースサービス", "ストレージ", "モニタリング", "本番デプロイ", "高負荷アーキテクチャ", "クラウド移行", "Google Cloud Platform", "Alibaba Cloud", "Kubernetes", "Docker", "Linux", "CI/CD", "モニタリング", "ロギング", "本番運用"] },
+    { "title": "🎨 フロントエンドエンジニアリング", "items": ["TypeScript", "JavaScript", "React", "Next.js", "Vue.js"] },
+    { "title": "💾 データベース", "items": ["MySQL", "Redis", "Cassandra", "MongoDB"] },
+    { "title": "🔄 CI/CD", "items": ["GitHub Actions", "GitLab CI", "CircleCI"] },
+    { "title": "📋 開発 & アーキテクチャ", "items": ["マイクロサービス", "分散システム", "クラウドアーキテクチャ", "コードレビュー", "デザインレビュー", "静的解析", "コーディング標準", "技術ドキュメント", "アーキテクチャ可視化", "Jira", "Confluence", "Redmine", "Mermaid", "UML", "ESLint", "SonarLint"] }
+  ],
+  "architectureTitle": "アーキテクチャ",
+  "architectureItems": ["システムアーキテクチャ設計", "技術選定", "API設計", "データベースアーキテクチャ", "クラウドアーキテクチャ", "マイクロサービス設計", "パフォーマンスアーキテクチャ"],
+  "engineeringQualityTitle": "エンジニアリング品質",
+  "engineeringQualityItems": ["コードレビュー", "デザインレビュー", "静的解析", "コーディング標準", "技術ドキュメント", "アーキテクチャ可視化"],
+  "teamSupportTitle": "チームサポート",
+  "teamSupportItems": ["技術メンタリング", "問題解決", "タスク分解", "技術的な意思決定", "開発プロセス改善"],
+  "teamSupportTools": "ツール: Jira, Confluence, Redmine, Mermaid, UML, ESLint, SonarLint",
+  "experienceJobs": [
+    {
+      "period": "2015 — 2016",
+      "company": "ZTE",
+      "role": "ソフトウェアエンジニア",
+      "title": "RCS統合通信システム",
+      "description": "クラウド通信インフラとシステム運用の分野でキャリアをスタート。",
+      "items": ["システム監視ツールの開発", "システムテスト", "本番保守", "データセンター展開", "PythonとBashによる自動化"],
+      "technologies": "技術: Java, Python, Bash, Linux, SUSE"
+    },
+    {
+      "period": "2016 — 2018",
+      "company": "南京HANHONG",
+      "role": "ソフトウェアエンジニア / サブテックリード",
+      "title": "微信公式アカウントプラットフォーム",
+      "description": "通信事業者向け企業システムを開発。Webアプリケーションと外部システムとの連携を含む。",
+      "items": ["要件分析", "システム設計", "Webアプリケーション開発", "外部システム連携", "API/インターフェース設計"],
+      "highlightsTitle": "ハイライト",
+      "highlights": ["中国聯通・中国電信向けシステムを開発", "微信ミニプログラムを開発", "2017年にパートナー賞を受賞", "2018年にイノベーション協力貢献賞を受賞"],
+      "technologies": "技術: Java, JavaScript, Python, Lua, Redis, MySQL, MongoDB, Linux"
+    },
+    {
+      "period": "2018 — 2020",
+      "company": "中国聯通上海",
+      "role": "テックリード",
+      "title": "特権センタープラットフォーム",
+      "description": "複数の外部サービスを統合する大規模エンタープライズWebプラットフォームの開発をリード。",
+      "items": ["システムアーキテクチャと設計", "バックエンド開発", "フロントエンド開発", "外部API連携", "技術的リーダーシップ"],
+      "highlightsTitle": "ハイライト",
+      "highlights": ["決済連携: 微信支付、支付宝、WoPay", "ID・アカウント連携: OAuth 2.0によるJD.com会員システム", "社内プラットフォーム: 請求書統計システム"],
+      "technologies": "技術: Vue.js, JavaScript, Python, Alibaba Cloud, OAuth 2.0"
+    },
+    {
+      "period": "2020 — 2021",
+      "company": "Synergy",
+      "role": "ソフトウェアエンジニア",
+      "title": "エンタープライズシステム",
+      "description": "データプラットフォーム、ヘルスケアシステム、クラウド移行など、複数の企業システムに従事。",
+      "sections": [
+        { "title": "データプラットフォーム / DWH", "description": "DWHのアーキテクチャと開発、データインポートツール開発、AWS開発環境、テストとデプロイ" },
+        { "title": "ヘルスケアシステム", "description": "バグ修正、データベースパフォーマンス最適化、新機能開発" },
+        { "title": "KINTO Nimbus — クラウド移行 & CI/CD", "description": "AWS移行、CI/CDアーキテクチャ、パフォーマンス最適化、新機能開発、デプロイ自動化" }
+      ],
+      "technologies": "技術: Java, Python, AWS, JavaScript, Node.js, AngularJS, MongoDB"
+    },
+    {
+      "period": "2021 — 2023",
+      "company": "New Idea",
+      "role": "ソフトウェアエンジニア / サブテックリード",
+      "title": "楽天認証ストレージ移行",
+      "description": "既存の認証ストレージアーキテクチャの移行を伴う大規模なシステムモダナイゼーションプロジェクト。",
+      "items": ["技術調査", "アーキテクチャ設計", "詳細設計", "バックエンド開発", "本番デプロイ", "システム監視", "インシデント調査", "パフォーマンス最適化", "本番データメンテナンス", "コードレビュー", "技術サポート"],
+      "achievementTitle": "主要な成果",
+      "achievement": "大規模な本番ストレージシステムをOracleからCassandraへ移行することに成功。",
+      "technologies": "技術: Kotlin, Vert.x, Coroutines, Cassandra, Kubernetes, GCP, GitLab CI, ELK"
+    },
+    {
+      "period": "2023 — 2026",
+      "company": "IPコンサルティング",
+      "role": "ソフトウェアエンジニア / テックリード",
+      "title": "ゴルフ管理プラットフォーム",
+      "description": "最新のクラウドベースのゴルフ管理プラットフォームでテックリードとして従事。",
+      "items": ["高並行オンラインサービス", "ゴルフコース管理機能", "外部連携", "リアルタイムスコアリング機能"],
+      "keyProjectsTitle": "主要プロジェクト",
+      "keyProjects": [
+        { "name": "キャディ評価システム", "description": "新しいキャディ評価機能を設計・開発" },
+        { "name": "GORA連携", "description": "ゴルフ場の内部スコアリングシステムをGORAと連携" },
+        { "name": "ゴルフ協会Webサイト移行", "description": "AWSへ移行" },
+        { "name": "オンライン競技プラットフォーム", "description": "高並行トラフィック向けに設計" }
+      ],
+      "technologies": "技術: Go, Gin, TypeScript, React, Next.js, AWS, CircleCI"
+    }
+  ]
 }

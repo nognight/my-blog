@@ -3,14 +3,13 @@ import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
-import en from '../locales/en.json';
-import ja from '../locales/ja.json';
-import zh from '../locales/zh.json';
+import { getLocale, locales } from '../locales';
 
-const locales = { en, ja, zh };
+const currentLang = getLocale(Astro.url.searchParams.get('lang'));
+const t = locales[currentLang];
 ---
 <!doctype html>
-<html lang="{Astro.url.searchParams.get('lang') ?? 'en'}">
+<html lang={currentLang}>
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
@@ -19,45 +18,36 @@ const locales = { en, ja, zh };
 		<main>
 			<div class="technical-leadership-container">
 				<div class="tech-lead-hero">
-					<h1>{locales[Astro.url.searchParams.get('lang') ?? 'en'].technicalLeadership}</h1>
-					<p>{locales[Astro.url.searchParams.get('lang') ?? 'en'].homeSubtitle}</p>
+					<h1>{t.technicalLeadership}</h1>
+					<p>{t.homeSubtitle}</p>
 				</div>
-				
+
 				<div class="architecture-section">
-					<h2>Architecture</h2>
+					<h2>{t.architectureTitle}</h2>
 					<ul>
-						<li>System architecture design</li>
-						<li>Technology selection</li>
-						<li>API design</li>
-						<li>Database architecture</li>
-						<li>Cloud architecture</li>
-						<li>Microservice design</li>
-						<li>Performance architecture</li>
+						{t.architectureItems.map((item) => (
+							<li>{item}</li>
+						))}
 					</ul>
 				</div>
-				
+
 				<div class="engineering-quality-section">
-					<h2>Engineering Quality</h2>
+					<h2>{t.engineeringQualityTitle}</h2>
 					<ul>
-						<li>Code review</li>
-						<li>Design review</li>
-						<li>Static analysis</li>
-						<li>Coding standards</li>
-						<li>Technical documentation</li>
-						<li>Architecture visualization</li>
+						{t.engineeringQualityItems.map((item) => (
+							<li>{item}</li>
+						))}
 					</ul>
 				</div>
-				
+
 				<div class="team-support-section">
-					<h2>Team Support</h2>
+					<h2>{t.teamSupportTitle}</h2>
 					<ul>
-						<li>Technical mentoring</li>
-						<li>Problem solving</li>
-						<li>Task decomposition</li>
-						<li>Technical decision making</li>
-						<li>Development process improvement</li>
+						{t.teamSupportItems.map((item) => (
+							<li>{item}</li>
+						))}
 					</ul>
-					<p>Tools: Jira, Confluence, Redmine, Mermaid, UML, ESLint, SonarLint</p>
+					<p>{t.teamSupportTools}</p>
 				</div>
 			</div>
 		</main>

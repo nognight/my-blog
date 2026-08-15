@@ -20,7 +20,129 @@
   "skillsText": "Backend: Java, Kotlin, Go, Python, Spring Boot, Gin, Microservices. Frontend: React, Next.js, Vue.js. Cloud: AWS, GCP, Kubernetes. Databases: MySQL, Redis, Cassandra, MongoDB.",
   "technicalLeadershipText": "Throughout my career, I have taken technical leadership responsibilities in addition to individual development, focusing on architecture design, technology selection, and team mentoring.",
   "developmentPhilosophyText": "I approach engineering problems through a continuous <strong>Why → What → How → Why</strong> cycle.",
+  "dpWhyTitle": "Why",
+  "dpWhyText": "Why does the problem exist? Before implementing a solution, I first identify the root cause, the actual business or technical problem, and the constraints around it.",
+  "dpWhatTitle": "What",
+  "dpWhatText": "What needs to be done to solve the problem? I evaluate possible approaches, trade-offs, and the impact of each decision before choosing what to build or change.",
+  "dpHowTitle": "How",
+  "dpHowText": "How should it be implemented, and how can we ensure it works? I consider architecture, implementation details, testing, observability, and operational requirements.",
+  "dpHowItems": ["Scalability", "Reliability", "Maintainability", "Observability", "Performance", "Operational complexity", "Long-term technical debt"],
+  "dpWhyAgainTitle": "Why — Again",
+  "dpWhyAgainText": "Why did the system behave differently from what we expected? After implementation, I verify the result against the original problem and continuously investigate unexpected behavior.",
+  "dpIterationText": "Unexpected behavior is not simply a failure — it is new information. I use it to revisit the <strong>Why</strong>, redefine the <strong>What</strong>, improve the <strong>How</strong>, and continue the cycle.",
+  "dpIterationCycle": "<strong>Why → What → How → Why → What → How → ...</strong>",
+  "dpSummary": "This approach helps me avoid solving symptoms instead of root causes, while balancing technical quality, business requirements, and long-term system health.",
   "aiAssistedDevelopmentText": "I actively use modern AI-assisted development techniques throughout the development process: Requirement → Task Decomposition → Context Preparation → Architecture/Design → Implementation → Review → Testing → Optimization.",
   "educationText": "B.S. in Computer Science / Information Engineering, Civil Aviation Flight University of China, 2011-2015.",
-  "lookingForText": "I am interested in opportunities where I can contribute as a Senior Software Engineer / Tech Lead, particularly in teams working on backend systems, distributed systems, cloud-native applications, and platform engineering."
+  "lookingForText": "I am interested in opportunities where I can contribute as a Senior Software Engineer / Tech Lead, particularly in teams working on backend systems, distributed systems, cloud-native applications, and platform engineering.",
+  "lastUpdated": "Last updated on",
+  "aboutText": "A backend-focused software engineer with more than 11 years of experience across China and Japan, specializing in distributed systems, microservices, and cloud-native architecture, while also covering the full stack from frontend to infrastructure and CI/CD.",
+  "specializations": [
+    "🔧 Designing and improving large-scale backend systems",
+    "🏗️ Distributed systems and microservices architecture",
+    "☁️ Cloud-native systems on AWS and other platforms",
+    "🔧 High-concurrency services and data platforms",
+    "👥 Technical leadership and team support"
+  ],
+  "bestThings": [
+    "Design and develop backend systems and APIs",
+    "Design distributed and microservice architectures",
+    "Build high-concurrency and high-load services",
+    "Design cloud-native systems on AWS",
+    "Improve system performance and reliability",
+    "Migrate and redesign legacy systems",
+    "Design database and data storage architectures",
+    "Build CI/CD and automated deployment pipelines",
+    "Lead technical decisions and code reviews",
+    "Work across backend, frontend, infrastructure, and operations"
+  ],
+  "skillsCategories": [
+    { "title": "🔧 Backend Engineering", "items": ["Java", "Kotlin", "Go", "Python", "Vert.x", "Spring Boot", "Gin", "REST APIs", "Microservices", "Distributed systems", "Concurrent programming", "External API integration"] },
+    { "title": "🏗️ Distributed Systems", "items": ["Microservice architecture", "Service-to-service communication", "API design", "Distributed data storage", "High-concurrency systems", "Fault analysis", "Performance optimization", "Production troubleshooting", "System modernization"] },
+    { "title": "☁️ Cloud & Infrastructure", "items": ["AWS", "Application architecture", "Compute and networking", "Database services", "Storage", "Monitoring", "Production deployment", "High-load architecture", "Cloud migration", "Google Cloud Platform", "Alibaba Cloud", "Kubernetes", "Docker", "Linux", "CI/CD", "Monitoring", "Logging", "Production operations"] },
+    { "title": "🎨 Frontend Engineering", "items": ["TypeScript", "JavaScript", "React", "Next.js", "Vue.js"] },
+    { "title": "💾 Databases", "items": ["MySQL", "Redis", "Cassandra", "MongoDB"] },
+    { "title": "🔄 CI/CD", "items": ["GitHub Actions", "GitLab CI", "CircleCI"] },
+    { "title": "📋 Development & Architecture", "items": ["Microservices", "Distributed Systems", "Cloud Architecture", "Code Review", "Design review", "Static analysis", "Coding standards", "Technical documentation", "Architecture visualization", "Jira", "Confluence", "Redmine", "Mermaid", "UML", "ESLint", "SonarLint"] }
+  ],
+  "architectureTitle": "Architecture",
+  "architectureItems": ["System architecture design", "Technology selection", "API design", "Database architecture", "Cloud architecture", "Microservice design", "Performance architecture"],
+  "engineeringQualityTitle": "Engineering Quality",
+  "engineeringQualityItems": ["Code review", "Design review", "Static analysis", "Coding standards", "Technical documentation", "Architecture visualization"],
+  "teamSupportTitle": "Team Support",
+  "teamSupportItems": ["Technical mentoring", "Problem solving", "Task decomposition", "Technical decision making", "Development process improvement"],
+  "teamSupportTools": "Tools: Jira, Confluence, Redmine, Mermaid, UML, ESLint, SonarLint",
+  "experienceJobs": [
+    {
+      "period": "2015 — 2016",
+      "company": "ZTE",
+      "role": "Software Engineer",
+      "title": "RCS Integrated Communication System",
+      "description": "Started my career working on cloud communication infrastructure and system operations.",
+      "items": ["Developed system monitoring tools", "System testing", "Production maintenance", "Data center deployment", "Automation using Python and Bash"],
+      "technologies": "Technologies: Java, Python, Bash, Linux, SUSE"
+    },
+    {
+      "period": "2016 — 2018",
+      "company": "Nanjing HANHONG",
+      "role": "Software Engineer / Sub Tech Lead",
+      "title": "WeChat Official Account Platform",
+      "description": "Developed enterprise systems for telecom operators, including Web applications and integrations with external systems.",
+      "items": ["Requirements analysis", "System design", "Web application development", "External system integration", "API/interface design"],
+      "highlightsTitle": "Highlights",
+      "highlights": ["Developed systems for China Unicom and China Telecom", "Developed WeChat Mini Programs", "Received Partner Award in 2017", "Received Innovation Cooperation Contribution Award in 2018"],
+      "technologies": "Technologies: Java, JavaScript, Python, Lua, Redis, MySQL, MongoDB, Linux"
+    },
+    {
+      "period": "2018 — 2020",
+      "company": "China Unicom Shanghai",
+      "role": "Tech Lead",
+      "title": "Privilege Center Platform",
+      "description": "Led the development of a large enterprise web platform integrating multiple external services.",
+      "items": ["System architecture and design", "Backend development", "Frontend development", "External API integration", "Technical leadership"],
+      "highlightsTitle": "Highlights",
+      "highlights": ["Payment Integration: WeChat Pay, Alipay, WoPay", "Identity & Account Integration: JD.com membership system using OAuth 2.0", "Internal Platform: Invoice statistics system"],
+      "technologies": "Technologies: Vue.js, JavaScript, Python, Alibaba Cloud, OAuth 2.0"
+    },
+    {
+      "period": "2020 — 2021",
+      "company": "Synergy",
+      "role": "Software Engineer",
+      "title": "Enterprise Systems",
+      "description": "Worked on multiple enterprise systems covering data platforms, healthcare systems, and cloud migration.",
+      "sections": [
+        { "title": "Data Platform / DWH", "description": "DWH architecture and development, Data import tool development, AWS development environment, Testing and deployment" },
+        { "title": "Healthcare System", "description": "Bug fixing, Database performance optimization, New feature development" },
+        { "title": "KINTO Nimbus — Cloud Migration & CI/CD", "description": "AWS migration, CI/CD architecture, Performance optimization, New feature development, Deployment automation" }
+      ],
+      "technologies": "Technologies: Java, Python, AWS, JavaScript, Node.js, AngularJS, MongoDB"
+    },
+    {
+      "period": "2021 — 2023",
+      "company": "New Idea",
+      "role": "Software Engineer / Sub Tech Lead",
+      "title": "Rakuten Authentication Storage Migration",
+      "description": "Large-scale system modernization project involving migration of an existing authentication storage architecture.",
+      "items": ["Technical investigation", "Architecture design", "Detailed design", "Backend development", "Production deployment", "System monitoring", "Incident investigation", "Performance optimization", "Production data maintenance", "Code review", "Technical support"],
+      "achievementTitle": "Key Achievement",
+      "achievement": "Successfully migrated a large-scale production storage system from Oracle to Cassandra.",
+      "technologies": "Technologies: Kotlin, Vert.x, Coroutines, Cassandra, Kubernetes, GCP, GitLab CI, ELK"
+    },
+    {
+      "period": "2023 — 2026",
+      "company": "IP Consulting",
+      "role": "Software Engineer / Tech Lead",
+      "title": "Golf Management Platform",
+      "description": "Worked as a Tech Lead on a modern cloud-based golf management platform.",
+      "items": ["High-concurrency online services", "Golf course management functionality", "External integrations", "Real-time scoring features"],
+      "keyProjectsTitle": "Key Projects",
+      "keyProjects": [
+        { "name": "Caddie Evaluation System", "description": "Designed and developed a new caddie evaluation feature" },
+        { "name": "GORA Integration", "description": "Integrated golf course internal scoring systems with GORA" },
+        { "name": "Golf Association Website Migration", "description": "Migrated to AWS" },
+        { "name": "Online Competition Platform", "description": "Designed for high-concurrency traffic" }
+      ],
+      "technologies": "Technologies: Go, Gin, TypeScript, React, Next.js, AWS, CircleCI"
+    }
+  ]
 }

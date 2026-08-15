@@ -4,37 +4,35 @@ import HeaderLink from './HeaderLink.astro';
 import { getLocale, isSupportedLocale, locales } from '../locales';
 
 const langParam = Astro.url.searchParams.get('lang');
-const pathname = Astro.url.pathname.replace(import.meta.env.BASE_URL, '');
-const isHome = pathname === '' || pathname === '/';
 const currentLang = getLocale(langParam);
-// Language switching only affects the home page (index.astro).
-const translate = isHome && isSupportedLocale(langParam);
 const t = locales[currentLang];
-const langSuffix = translate ? `?lang=${currentLang}` : '';
+const langSuffix = isSupportedLocale(langParam) ? `?lang=${currentLang}` : '';
+const pathname = Astro.url.pathname;
 
 const links = [
 	{ href: '/', label: 'Home', key: 'home' },
-	{ href: '/about', label: 'About Me', key: 'about' },
+	{ href: '/about', label: 'About', key: 'about' },
 	{ href: '/experience', label: 'Experience', key: 'experience' },
+	{ href: '/skills', label: 'Skills', key: 'skills' },
+	{ href: '/technical-leadership', label: 'Technical Leadership', key: 'technicalLeadership' },
+	{ href: '/development-philosophy', label: 'Development Philosophy', key: 'developmentPhilosophy' },
 	{ href: '/blog', label: 'Blog', key: 'blog' },
 ] as const;
 ---
 
 <header>
 	<nav>
-		<h2><a href="/">{SITE_TITLE}</a></h2>
+		<h2><a href={'/' + langSuffix}>{SITE_TITLE}</a></h2>
 		<div class="internal-links">
 			{links.map((link) => (
-				<HeaderLink href={link.href + langSuffix}>
-					{translate ? t[link.key] : link.label}
-				</HeaderLink>
+				<HeaderLink href={link.href + langSuffix}>{t[link.key]}</HeaderLink>
 			))}
 		</div>
 		<div class="lang-switcher" aria-label="Language switcher">
 			{Object.entries(locales).map(([code, strings]) => (
 				<a
-					href={`/?lang=${code}`}
-					class:list={{ active: isHome && code === currentLang }}
+					href={`${pathname}?lang=${code}`}
+					class:list={{ active: code === currentLang }}
 				>
 					{strings.lang}
 				</a>

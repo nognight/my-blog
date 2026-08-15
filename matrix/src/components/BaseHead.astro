@@ -32,6 +32,24 @@ const { title, description, image = FallbackImage } = Astro.props;
 />
 <meta name="generator" content={Astro.generator} />
 
+<!-- Language persistence: keep the selected language across pages, defaulting to 'en'. -->
+<script is:inline>
+	(() => {
+		const SUPPORTED = ['en', 'ja', 'zh'];
+		const param = new URLSearchParams(location.search).get('lang');
+		if (param && SUPPORTED.includes(param)) {
+			localStorage.setItem('lang', param);
+			return;
+		}
+		const saved = localStorage.getItem('lang');
+		if (saved && SUPPORTED.includes(saved) && !param) {
+			const url = new URL(location.href);
+			url.searchParams.set('lang', saved);
+			location.replace(url.toString());
+		}
+	})();
+</script>
+
 <Font cssVariable="--font-atkinson" preload />
 
 <!-- Canonical URL -->
