@@ -5,14 +5,16 @@
   Palette:
     --accent:      neon cyan
     --accent-dark: deep neon blue
+    --black:       near-white (used for header shadows, borders)
     --gray:        muted cyan (secondary text)
-    --gray-light:  dark panel (used as code background / hr / gradient base)
+    --gray-light:  dark panel (used as code background / header bg / hr / gradient base)
     --gray-dark:   main body text -> light gray (also headings)
  */
 
 :root {
 	--accent: #00f0ff;
 	--accent-dark: #0088ff;
+	--black: 225, 235, 255;
 	--gray: 130, 180, 210;
 	--gray-light: 30, 35, 55;
 	--gray-dark: 200, 210, 230;
