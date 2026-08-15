@@ -9,8 +9,7 @@
   "blog": "博客",
   "technicalLeadership": "技术领导力",
   "developmentPhilosophy": "开发哲学",
-  "aiAssistedDevelopment": "AI-Assisted Development",
-  "certifications": "认证",
+  "aiAssistedDevelopment": "AI辅助开发",
   "education": "教育",
   "lookingFor": "寻找机会",
   "homeTitle": "你好，YI CHAOCHAO",
@@ -19,9 +18,9 @@
   "aboutMeText": "我是一名在中国和日本拥有超过11年专业经验的软件工程师。我的主要方向是后端和分布式系统，同时我也拥有整个技术栈的实践经验，包括前端开发、数据库、云基础设施、Kubernetes 和 CI/CD。",
   "experienceText": "ZTE 到 IP 顾问，我致力于跨越中国和日本的企业系统架构设计和开发。2015-2026 年间累计 6 个关键职位。",
   "skillsText": "后端: Java, Kotlin, Go, Python, Spring Boot, Gin, Microservices. 前端: React, Next.js, Vue.js. 云: AWS, GCP, Kubernetes. 数据库: MySQL, Redis, Cassandra, MongoDB。",
-  "technicalLeadershipText": " Throughout my career, I have taken technical leadership responsibilities in addition to individual development, focusing on architecture design, technology selection, and team mentoring.",
-  "developmentPhilosophyText": "我以为一个好的工程师应该在实现功能之外理解系统。在实现功能时，我考虑可扩展性、可靠性、可维护性、可观测性、性能以及长期的技术债务。",
-  "aiAssistedDevelopmentText": "I actively use modern AI-assisted development techniques throughout the development process: Requirement → Task Decomposition → Context Preparation → Architecture/Design → Implementation → Review → Testing → Optimization.",
+  "technicalLeadershipText": "在我的职业生涯中，除了个人开发之外，我还承担了技术领导职责，专注于架构设计、技术选型和团队指导。",
+  "developmentPhilosophyText": "我通过一个持续的<strong>Why → What → How → Why</strong>循环来处理工程问题。",
+  "aiAssistedDevelopmentText": "我在整个开发过程中积极使用现代 AI 辅助开发技术：需求 → 任务分解 → 上下文准备 → 架构/设计 → 实现 → 审查 → 测试 → 优化。",
   "educationText": "计算机科学/信息工程学士，Civil Aviation Flight University of China, 2011-2015。",
   "lookingForText": "我有兴趣在从事后端系统、分布式系统、云原生应用和平台工程的团队中担任高级软件工程师/技术主管的机会。"
 }
