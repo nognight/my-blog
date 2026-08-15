@@ -34,6 +34,12 @@
   "dpSummary": "这种方法帮助我避免只解决症状而非根本原因，同时平衡技术质量、业务需求和长期系统健康。",
   "aiAssistedDevelopmentText": "我在整个开发过程中积极使用现代 AI 辅助开发技术：需求 → 任务分解 → 上下文准备 → 架构/设计 → 实现 → 审查 → 测试 → 优化。",
   "educationText": "计算机科学/信息工程学士，Civil Aviation Flight University of China, 2011-2015。",
+  "educationInfo": {
+    "school": "中国民用航空飞行学院",
+    "degree": "计算机科学学士",
+    "items": ["C# 游戏", "JSP 网页", "学生考勤系统"],
+    "technologies": "技术: Java, Mysql, C#"
+  },
   "lookingForText": "我有兴趣在从事后端系统、分布式系统、云原生应用和平台工程的团队中担任高级软件工程师/技术主管的机会。",
   "lastUpdated": "最后更新于",
   "aboutText": "一名专注于后端的软件工程师，在中国和日本拥有超过11年的经验，擅长分布式系统、微服务和云原生架构，同时覆盖从前端到基础设施和 CI/CD 的全栈领域。",

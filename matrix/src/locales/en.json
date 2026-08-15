@@ -34,6 +34,12 @@
   "dpSummary": "This approach helps me avoid solving symptoms instead of root causes, while balancing technical quality, business requirements, and long-term system health.",
   "aiAssistedDevelopmentText": "I actively use modern AI-assisted development techniques throughout the development process: Requirement → Task Decomposition → Context Preparation → Architecture/Design → Implementation → Review → Testing → Optimization.",
   "educationText": "B.S. in Computer Science / Information Engineering, Civil Aviation Flight University of China, 2011-2015.",
+  "educationInfo": {
+    "school": "Civil Aviation Flight University of China",
+    "degree": "B.S. in Computer Science",
+    "items": ["C# game", "JSP Web Page", "Student Attendance System"],
+    "technologies": "Technologies: Java, Mysql, C#"
+  },
   "lookingForText": "I am interested in opportunities where I can contribute as a Senior Software Engineer / Tech Lead, particularly in teams working on backend systems, distributed systems, cloud-native applications, and platform engineering.",
   "lastUpdated": "Last updated on",
   "aboutText": "A backend-focused software engineer with more than 11 years of experience across China and Japan, specializing in distributed systems, microservices, and cloud-native architecture, while also covering the full stack from frontend to infrastructure and CI/CD.",

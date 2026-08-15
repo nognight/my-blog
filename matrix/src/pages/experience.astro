@@ -7,6 +7,13 @@ import { getLocale, locales } from '../locales';
 
 const currentLang = getLocale(Astro.url.searchParams.get('lang'));
 const t = locales[currentLang];
+
+// Sort jobs by period descending (newest first)
+const experienceJobs = [...t.experienceJobs].sort((a, b) => {
+	const startA = parseInt(a.period, 10);
+	const startB = parseInt(b.period, 10);
+	return startB - startA;
+});
 ---
 <!doctype html>
 <html lang={currentLang}>
@@ -25,7 +32,7 @@ const t = locales[currentLang];
 				<div class="timeline">
 
 					{
-						t.experienceJobs.map((job) => (
+						experienceJobs.map((job) => (
 							<div class="timeline-item">
 								<div class="timeline-header">
 									<h3>{job.period}</h3>
@@ -87,21 +94,20 @@ const t = locales[currentLang];
 
 
 					<!-- education -->
-					<!-- 2011 - 2015 -->
 					<div class="timeline-item">
 						<div class="timeline-header">
-							<h3>education : 2011 — 2015</h3>
-							<span>Civil Aviation Flight University of China</span>
+							<h3>{t.education} : 2011 — 2015</h3>
+							<span>{t.educationInfo.school}</span>
 						</div>
 						<div class="timeline-body">
-							<p><strong>B.S. in Computer Science</strong></p>
+							<p><strong>{t.educationInfo.degree}</strong></p>
 							<ul>
-								<li>C# game</li>
-								<li>JSP Web Page</li>
-								<li>Student Attendance System</li>
+								{t.educationInfo.items.map((item) => (
+									<li>{item}</li>
+								))}
 							</ul>
-							<p class="technologies">Technologies: Java, Mysql, C#</p>
-							<a class="card-link" href="/education">Eeducation →</a>
+							<p class="technologies">{t.educationInfo.technologies}</p>
+							<a class="card-link" href="/education">{t.education} →</a>
 						</div>
 					</div>
 
