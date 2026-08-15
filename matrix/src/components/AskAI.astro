@@ -1,0 +1,365 @@
+---
+import {
+	CHAT_ENDPOINT,
+	CHAT_MAX_TOKENS,
+	CHAT_MODEL,
+	CHAT_TEMPERATURE,
+} from '../consts';
+import { getLocale, locales } from '../locales';
+
+const currentLang = getLocale(Astro.url.searchParams.get('lang'));
+const t = locales[currentLang];
+
+const config = {
+	lang: currentLang,
+	endpoint: CHAT_ENDPOINT,
+	model: CHAT_MODEL,
+	maxTokens: CHAT_MAX_TOKENS,
+	temperature: CHAT_TEMPERATURE,
+	context: t,
+};
+// Escape `<` so the embedded JSON cannot break out of the script tag.
+const configJson = JSON.stringify(config).replace(/</g, '\\u003c');
+---
+
+<script type="application/json" id="ask-ai-config" is:inline set:html={configJson}></script>
+
+<button
+	type="button"
+	class="ask-ai-fab"
+	id="ask-ai-fab"
+	aria-label={t.askAi}
+	aria-expanded="false"
+	aria-controls="ask-ai-panel"
+>
+	<span class="fab-icon" aria-hidden="true">🤖</span>
+	<span class="fab-label">{t.askAi}</span>
+</button>
+
+<section class="ask-ai-panel" id="ask-ai-panel" hidden aria-label={t.askAi}>
+	<header class="ask-ai-header">
+		<span class="ask-ai-title">🤖 {t.askAi}</span>
+		<button type="button" class="ask-ai-close" id="ask-ai-close" aria-label={t.chatClose}>
+			✕
+		</button>
+	</header>
+	<div class="ask-ai-messages" id="ask-ai-messages" aria-live="polite"></div>
+	<form class="ask-ai-form" id="ask-ai-form">
+		<textarea
+			id="ask-ai-input"
+			class="ask-ai-input"
+			rows="2"
+			placeholder={t.chatPlaceholder}
+		></textarea>
+		<button type="submit" class="ask-ai-send" id="ask-ai-send">{t.chatSend}</button>
+	</form>
+</section>
+
+<script>
+	interface AskAiConfig {
+		lang: string;
+		endpoint: string;
+		model: string;
+		maxTokens: number;
+		temperature: number;
+		context: Record<string, string>;
+	}
+
+	const configEl = document.getElementById('ask-ai-config');
+	const config: AskAiConfig = JSON.parse(configEl?.textContent ?? '{}') as AskAiConfig;
+
+	const fab = document.getElementById('ask-ai-fab') as HTMLButtonElement;
+	const panel = document.getElementById('ask-ai-panel') as HTMLElement;
+	const closeBtn = document.getElementById('ask-ai-close') as HTMLButtonElement;
+	const messages = document.getElementById('ask-ai-messages') as HTMLDivElement;
+	const form = document.getElementById('ask-ai-form') as HTMLFormElement;
+	const input = document.getElementById('ask-ai-input') as HTMLTextAreaElement;
+	const sendBtn = document.getElementById('ask-ai-send') as HTMLButtonElement;
+
+	let streaming = false;
+
+	function setOpen(open: boolean) {
+		panel.hidden = !open;
+		fab.setAttribute('aria-expanded', String(open));
+		if (open) input.focus();
+	}
+
+	function scrollToBottom() {
+		messages.scrollTop = messages.scrollHeight;
+	}
+
+	function addMessage(role: 'user' | 'assistant', text: string) {
+		const div = document.createElement('div');
+		div.className = `ask-ai-msg ask-ai-${role}`;
+		const bubble = document.createElement('div');
+		bubble.className = 'ask-ai-bubble';
+		bubble.textContent = text;
+		div.appendChild(bubble);
+		messages.appendChild(div);
+		scrollToBottom();
+		return bubble;
+	}
+
+	function appendStreamed(el: HTMLElement, delta: string) {
+		el.textContent += delta;
+		scrollToBottom();
+	}
+
+	function parseSse(block: string): { event: string; data: string } {
+		let event = 'message';
+		let data = '';
+		for (const line of block.split('\n')) {
+			if (line.startsWith('event:')) event = line.slice(6).trim();
+			else if (line.startsWith('data:')) data += (data ? '\n' : '') + line.slice(5).trim();
+		}
+		return { event, data };
+	}
+
+	async function sendMessage() {
+		const question = input.value.trim();
+		if (!question || streaming) return;
+
+		input.value = '';
+		addMessage('user', question);
+
+		const thinking = addMessage('assistant', config.context.chatThinking ?? '…');
+		streaming = true;
+		sendBtn.disabled = true;
+
+		try {
+			const res = await fetch(config.endpoint, {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify({
+					context: JSON.stringify(config.context),
+					question,
+					model: config.model,
+					max_tokens: config.maxTokens,
+					temperature: config.temperature,
+				}),
+			});
+			if (!res.ok) {
+				const detail = await res.text();
+				throw new Error(`HTTP ${res.status}: ${detail}`);
+			}
+			if (!res.body) throw new Error('No response body');
+
+			const reader = res.body.getReader();
+			const decoder = new TextDecoder();
+			let buffer = '';
+			let started = false;
+
+			while (true) {
+				const { done, value } = await reader.read();
+				if (done) break;
+				buffer += decoder.decode(value, { stream: true });
+				const blocks = buffer.split('\n\n');
+				buffer = blocks.pop() ?? '';
+				for (const block of blocks) {
+					const { event, data } = parseSse(block);
+					if (event === 'queued') {
+						try {
+							const j = JSON.parse(data) as { wait_seconds: number };
+							thinking.textContent = `⏳ ${j.wait_seconds.toFixed(1)}s...`;
+						} catch {
+							/* ignore malformed payload */
+						}
+					} else if (event === 'error') {
+						try {
+							const j = JSON.parse(data) as { message: string };
+							throw new Error(j.message);
+						} catch {
+							throw new Error(data);
+						}
+					} else if (data === '[DONE]') {
+						// stream finished
+					} else {
+						try {
+							const j = JSON.parse(data) as {
+								choices?: { delta?: { content?: string } }[];
+							};
+							const delta = j.choices?.[0]?.delta?.content ?? '';
+							if (delta) {
+								if (!started) {
+									thinking.textContent = delta;
+									started = true;
+								} else {
+									appendStreamed(thinking, delta);
+								}
+							}
+						} catch {
+							/* non-JSON data line, skip */
+						}
+					}
+				}
+			}
+		} catch (err) {
+			thinking.textContent = config.context.chatError ?? 'Error';
+			console.error(err);
+		} finally {
+			streaming = false;
+			sendBtn.disabled = false;
+			input.focus();
+		}
+	}
+
+	fab.addEventListener('click', () => setOpen(Boolean(panel.hidden)));
+	closeBtn.addEventListener('click', () => setOpen(false));
+	form.addEventListener('submit', (e) => {
+		e.preventDefault();
+		sendMessage();
+	});
+	input.addEventListener('keydown', (e) => {
+		if (e.key === 'Enter' && !e.shiftKey) {
+			e.preventDefault();
+			sendMessage();
+		}
+	});
+
+	addMessage('assistant', config.context.chatGreeting ?? '');
+</script>
+
+<style is:global>
+	.ask-ai-fab {
+		position: fixed;
+		right: 1em;
+		bottom: 1em;
+		z-index: 1000;
+		display: flex;
+		align-items: center;
+		gap: 0.5em;
+		padding: 0.6em 1em;
+		background: var(--accent);
+		color: #1d2b53;
+		font-family: var(--font-atkinson);
+		font-size: 1rem;
+		font-weight: 700;
+		line-height: 1;
+		border: 4px solid rgb(var(--black));
+		border-radius: 0;
+		box-shadow: 4px 4px 0 rgba(0, 0, 0, 40%);
+		cursor: pointer;
+	}
+	.ask-ai-fab:hover {
+		background: #ffec27;
+	}
+
+	.ask-ai-panel {
+		position: fixed;
+		right: 1em;
+		bottom: calc(1em + 3.2em);
+		z-index: 1000;
+		width: min(380px, calc(100vw - 2em));
+		display: flex;
+		flex-direction: column;
+		background: #1d2b53;
+		border: 4px solid rgb(var(--black));
+		border-radius: 0;
+		box-shadow:
+			4px 4px 0 rgba(0, 0, 0, 40%),
+			8px 8px 0 rgba(0, 0, 0, 25%);
+		color: rgb(var(--gray-dark));
+	}
+	.ask-ai-panel[hidden] {
+		display: none;
+	}
+
+	.ask-ai-header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 0.5em 0.75em;
+		background: rgb(var(--gray-light));
+		border-bottom: 4px solid rgb(var(--black));
+	}
+	.ask-ai-title {
+		font-weight: 700;
+	}
+	.ask-ai-close {
+		background: none;
+		border: none;
+		color: rgb(var(--gray-dark));
+		font-size: 1.1em;
+		font-weight: 700;
+		cursor: pointer;
+		padding: 0 0.25em;
+	}
+	.ask-ai-close:hover {
+		color: #ffec27;
+	}
+
+	.ask-ai-messages {
+		display: flex;
+		flex-direction: column;
+		gap: 0.75em;
+		padding: 0.75em;
+		height: 320px;
+		overflow-y: auto;
+	}
+	.ask-ai-msg {
+		display: flex;
+	}
+	.ask-ai-user {
+		justify-content: flex-end;
+	}
+	.ask-ai-bubble {
+		max-width: 85%;
+		padding: 0.5em 0.75em;
+		font-size: 0.9em;
+		line-height: 1.4;
+		word-break: break-word;
+		white-space: pre-wrap;
+	}
+	.ask-ai-user .ask-ai-bubble {
+		background: var(--accent);
+		color: #1d2b53;
+		border: 3px solid rgb(var(--black));
+	}
+	.ask-ai-assistant .ask-ai-bubble {
+		background: rgb(var(--gray-light));
+		color: rgb(var(--gray-dark));
+		border: 3px solid rgb(var(--black));
+	}
+
+	.ask-ai-form {
+		display: flex;
+		gap: 0.5em;
+		padding: 0.75em;
+		border-top: 4px solid rgb(var(--black));
+	}
+	.ask-ai-input {
+		flex: 1;
+		background-color: rgb(var(--gray-light));
+		color: rgb(var(--gray-dark));
+		border: 3px solid rgb(var(--black));
+		border-radius: 0;
+		font-family: var(--font-atkinson);
+		font-size: 0.9em;
+		resize: none;
+	}
+	.ask-ai-send {
+		align-self: flex-end;
+		padding: 0.5em 1em;
+		background: var(--accent);
+		color: #1d2b53;
+		font-family: var(--font-atkinson);
+		font-weight: 700;
+		font-size: 0.9em;
+		border: 3px solid rgb(var(--black));
+		border-radius: 0;
+		cursor: pointer;
+	}
+	.ask-ai-send:hover {
+		background: #ffec27;
+	}
+	.ask-ai-send:disabled {
+		opacity: 0.5;
+		cursor: wait;
+	}
+
+	@media (max-width: 720px) {
+		.ask-ai-panel {
+			width: calc(100vw - 2em);
+		}
+	}
+</style>
