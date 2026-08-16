@@ -2,6 +2,7 @@ import asyncio
 import json
 
 from fastapi import FastAPI, HTTPException, Request
+from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import HTMLResponse, StreamingResponse
 from workers import WorkerEntrypoint
 
@@ -12,6 +13,13 @@ from rate_limiter import RateLimiter
 from schemas import ChatRequest
 
 app = FastAPI(title="AI Chat Worker")
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_methods=["POST", "OPTIONS"],
+    allow_headers=["Content-Type"],
+)
 
 _limiter: RateLimiter | None = None
 
@@ -97,6 +105,7 @@ async def _sse_stream(env, limiter: RateLimiter, ip: str, delay: float, body: Ch
             messages=messages,
             max_tokens=body.max_tokens,
             temperature=body.temperature,
+            top_p=body.top_p,
         ):
             yield f"data: {chunk}\n\n"
         yield "data: [DONE]\n\n"

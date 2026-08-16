@@ -15,6 +15,7 @@ CHAT_PAGE_HTML = """<!doctype html>
   button:disabled { opacity: 0.5; cursor: wait; }
   pre { background: #111; border: 1px solid #333; border-radius: 8px; padding: 1rem;
     white-space: pre-wrap; min-height: 6rem; margin-top: 1.5rem; }
+  pre#think { color: #8a8a8a; font-style: italic; min-height: 0; }
   .meta { color: #888; }
 </style>
 </head>
@@ -26,6 +27,7 @@ CHAT_PAGE_HTML = """<!doctype html>
 <label for="question">Question</label>
 <input id="question" placeholder="Ask about the context..." />
 <button id="send">Send</button>
+<pre id="think" hidden></pre>
 <pre id="out"></pre>
 <script>
 const $ = (id) => document.getElementById(id);
@@ -33,9 +35,9 @@ const out = $("out");
 
 function parseSse(block) {
   let event = "message", data = "";
-  for (const line of block.split("\n")) {
+  for (const line of block.split("\\n")) {
     if (line.startsWith("event:")) event = line.slice(6).trim();
-    else if (line.startsWith("data:")) data += (data ? "\n" : "") + line.slice(5).trim();
+    else if (line.startsWith("data:")) data += (data ? "\\n" : "") + line.slice(5).trim();
   }
   return { event, data };
 }
@@ -48,6 +50,9 @@ $("send").onclick = async () => {
   const btn = $("send");
   btn.disabled = true;
   out.textContent = "";
+  const think = $("think");
+  think.hidden = true;
+  think.textContent = "";
 
   try {
     const resp = await fetch("/chat", {
@@ -82,8 +87,14 @@ $("send").onclick = async () => {
         } else {
           try {
             const j = JSON.parse(data);
-            const delta = j.choices?.[0]?.delta?.content ?? "";
-            if (delta) out.textContent += delta;
+            const delta = j.choices?.[0]?.delta ?? {};
+            const reasoning = delta.reasoning_content ?? "";
+            const content = delta.content ?? "";
+            if (reasoning) {
+              think.hidden = false;
+              think.textContent += reasoning;
+            }
+            if (content) out.textContent += content;
           } catch {}
         }
       }

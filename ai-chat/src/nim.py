@@ -13,7 +13,7 @@ from typing import AsyncIterator
 import httpx
 
 DEFAULT_BASE_URL = "https://integrate.api.nvidia.com"
-DEFAULT_MODEL = "nvidia/llama-3.1-nemotron-nano-8b-v1"
+DEFAULT_MODEL = "nvidia/nemotron-3.5-lightning-30b-a3b"
 
 
 def _headers(api_key: str) -> dict[str, str]:
@@ -29,8 +29,9 @@ async def stream_chat_completion(
     api_key: str,
     model: str,
     messages: list[dict[str, str]],
-    max_tokens: int = 512,
-    temperature: float = 0.7,
+    max_tokens: int = 16384,
+    temperature: float = 1.0,
+    top_p: float = 0.95,
 ) -> AsyncIterator[str]:
     """Stream a chat completion from NIM.
 
@@ -44,7 +45,10 @@ async def stream_chat_completion(
         "messages": messages,
         "max_tokens": max_tokens,
         "temperature": temperature,
+        "top_p": top_p,
         "stream": True,
+        "chat_template_kwargs": {"enable_thinking": True},
+        "reasoning_budget": 16384,
     }
 
     async with httpx.AsyncClient(timeout=httpx.Timeout(60.0)) as client:
