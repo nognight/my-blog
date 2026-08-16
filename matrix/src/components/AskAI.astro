@@ -79,12 +79,73 @@ const configJson = JSON.stringify(config).replace(/</g, '\\u003c');
 	const input = document.getElementById('ask-ai-input') as HTMLTextAreaElement;
 	const sendBtn = document.getElementById('ask-ai-send') as HTMLButtonElement;
 
+	// iOS Safari does not resize the layout viewport when the virtual keyboard
+	// opens, so position:fixed elements stay covered. Track the visual viewport
+	// and lift the panel by the keyboard height instead.
+	const visualViewport = window.visualViewport;
+
+	function adjustForKeyboard() {
+		if (!visualViewport) return;
+		const offset = window.innerHeight - (visualViewport.offsetTop + visualViewport.height);
+		panel.style.bottom = offset > 0 ? `${offset}px` : '';
+	}
+
+	if (visualViewport) {
+		visualViewport.addEventListener('resize', adjustForKeyboard);
+		visualViewport.addEventListener('scroll', adjustForKeyboard);
+	} else {
+		window.addEventListener('resize', adjustForKeyboard);
+	}
+
 	let streaming = false;
 
+	const PANEL_ANIM_MS = 280;
+	let closeTimer: number | undefined;
+
 	function setOpen(open: boolean) {
-		panel.hidden = !open;
-		fab.setAttribute('aria-expanded', String(open));
-		if (open) input.focus();
+		if (open) {
+			if (closeTimer) {
+				window.clearTimeout(closeTimer);
+				closeTimer = undefined;
+			}
+			panel.hidden = false;
+			// Force reflow so the slide-up transition runs from the folded state.
+			void panel.offsetHeight;
+			panel.classList.add('ask-ai-open');
+			fab.hidden = true;
+			fab.setAttribute('aria-expanded', 'true');
+			focusInputAfterAnimation();
+		} else {
+			panel.classList.remove('ask-ai-open');
+			fab.hidden = false;
+			fab.setAttribute('aria-expanded', 'false');
+			if (closeTimer) window.clearTimeout(closeTimer);
+			closeTimer = window.setTimeout(() => {
+				panel.hidden = true;
+				closeTimer = undefined;
+			}, PANEL_ANIM_MS);
+		}
+	}
+
+	function focusInputAfterAnimation() {
+		// Mobile browsers only honor focus() inside the user gesture that opened
+		// the panel, so request it immediately; desktop re-focuses once the
+		// slide-in transition actually finishes.
+		input.focus({ preventScroll: true });
+		const timer = window.setTimeout(
+			() => input.focus({ preventScroll: true }),
+			PANEL_ANIM_MS,
+		);
+		panel.addEventListener(
+			'transitionend',
+			(e) => {
+				if (e.target === panel && e.propertyName === 'transform') {
+					window.clearTimeout(timer);
+					input.focus({ preventScroll: true });
+				}
+			},
+			{ once: true },
+		);
 	}
 
 	function scrollToBottom() {
@@ -247,11 +308,15 @@ const configJson = JSON.stringify(config).replace(/</g, '\\u003c');
 	.ask-ai-fab:hover {
 		background: #ffec27;
 	}
+	.ask-ai-fab[hidden] {
+		display: none;
+	}
 
 	.ask-ai-panel {
+		--ask-ai-panel-gap: calc(1em + 3.2em);
 		position: fixed;
 		right: 1em;
-		bottom: calc(1em + 3.2em);
+		bottom: var(--ask-ai-panel-gap);
 		z-index: 1000;
 		width: min(380px, calc(100vw - 2em));
 		display: flex;
@@ -263,9 +328,34 @@ const configJson = JSON.stringify(config).replace(/</g, '\\u003c');
 			4px 4px 0 rgba(0, 0, 0, 40%),
 			8px 8px 0 rgba(0, 0, 0, 25%);
 		color: rgb(var(--gray-dark));
+		transform: translateX(calc(100% + 1em));
+		opacity: 0;
+		transition:
+			transform 0.28s ease-out,
+			opacity 0.28s ease-out;
+	}
+	@media (max-width: 720px) {
+		.ask-ai-panel {
+			left: 1em;
+			right: 1em;
+			bottom: 1em;
+			width: auto;
+			transform: translateX(calc(100% + 1em));
+		}
 	}
 	.ask-ai-panel[hidden] {
 		display: none;
+	}
+	.ask-ai-panel.ask-ai-open {
+		transform: translateX(0);
+		opacity: 1;
+	}
+	@media (prefers-reduced-motion: reduce) {
+		.ask-ai-panel {
+			transform: none;
+			opacity: 1;
+			transition: none;
+		}
 	}
 
 	.ask-ai-header {
@@ -297,7 +387,7 @@ const configJson = JSON.stringify(config).replace(/</g, '\\u003c');
 		flex-direction: column;
 		gap: 0.75em;
 		padding: 0.75em;
-		height: 320px;
+		height: 220px;
 		overflow-y: auto;
 	}
 	.ask-ai-msg {
@@ -342,7 +432,7 @@ const configJson = JSON.stringify(config).replace(/</g, '\\u003c');
 		resize: none;
 	}
 	.ask-ai-send {
-		align-self: flex-end;
+		align-self: stretch;
 		padding: 0.5em 1em;
 		background: var(--accent);
 		color: #1d2b53;
@@ -359,11 +449,5 @@ const configJson = JSON.stringify(config).replace(/</g, '\\u003c');
 	.ask-ai-send:disabled {
 		opacity: 0.5;
 		cursor: wait;
-	}
-
-	@media (max-width: 720px) {
-		.ask-ai-panel {
-			width: calc(100vw - 2em);
-		}
 	}
 </style>
