@@ -4,6 +4,7 @@ import {
 	CHAT_MAX_TOKENS,
 	CHAT_MODEL,
 	CHAT_TEMPERATURE,
+	CHAT_TOP_P,
 } from '../consts';
 import { getLocale, locales } from '../locales';
 
@@ -16,6 +17,7 @@ const config = {
 	model: CHAT_MODEL,
 	maxTokens: CHAT_MAX_TOKENS,
 	temperature: CHAT_TEMPERATURE,
+	topP: CHAT_TOP_P,
 	context: t,
 };
 // Escape `<` so the embedded JSON cannot break out of the script tag.
@@ -62,6 +64,7 @@ const configJson = JSON.stringify(config).replace(/</g, '\\u003c');
 		model: string;
 		maxTokens: number;
 		temperature: number;
+		topP: number;
 		context: Record<string, string>;
 	}
 
@@ -136,6 +139,7 @@ const configJson = JSON.stringify(config).replace(/</g, '\\u003c');
 					model: config.model,
 					max_tokens: config.maxTokens,
 					temperature: config.temperature,
+					top_p: config.topP,
 				}),
 			});
 			if (!res.ok) {
