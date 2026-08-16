@@ -24,9 +24,10 @@ class ChatRequest(BaseModel):
         default=None,
         description="NIM model id; defaults to the NIM_MODEL worker variable",
     )
-    max_tokens: int = Field(default=16384, ge=1, le=16384)
+    max_tokens: int = Field(default=4096, ge=1, le=16384)
     temperature: float = Field(default=1.0, ge=0.0, le=2.0)
     top_p: float = Field(default=0.95, ge=0.0, le=1.0)
+    reasoning_budget: int | None = Field(default=4096, ge=0, le=16384)
 
 
 class QueueStatus(BaseModel):

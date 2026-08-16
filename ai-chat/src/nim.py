@@ -29,9 +29,10 @@ async def stream_chat_completion(
     api_key: str,
     model: str,
     messages: list[dict[str, str]],
-    max_tokens: int = 16384,
+    max_tokens: int = 4096,
     temperature: float = 1.0,
     top_p: float = 0.95,
+    reasoning_budget: int | None = 4096,
 ) -> AsyncIterator[str]:
     """Stream a chat completion from NIM.
 
@@ -48,8 +49,9 @@ async def stream_chat_completion(
         "top_p": top_p,
         "stream": True,
         "chat_template_kwargs": {"enable_thinking": True},
-        "reasoning_budget": 16384,
     }
+    if reasoning_budget is not None:
+        payload["reasoning_budget"] = reasoning_budget
 
     async with httpx.AsyncClient(timeout=httpx.Timeout(60.0)) as client:
         async with client.stream(

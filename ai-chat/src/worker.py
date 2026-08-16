@@ -1,5 +1,6 @@
 import asyncio
 import json
+from typing import AsyncIterator
 
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
@@ -89,6 +90,50 @@ async def chat(body: ChatRequest, request: Request):
     )
 
 
+async def _coalesce_sse(
+    chunks: AsyncIterator[str],
+    *,
+    flush_interval: float = 0.1,
+    max_batch: int = 64,
+) -> AsyncIterator[str]:
+    """Buffer NIM data lines and emit them as batched SSE frames.
+
+    Each yield crosses the Python↔JS bridge in the Workers runtime, so
+    flushing ~10x/s instead of once per token drastically cuts CPU time
+    (free tier allows only 10ms per request). Uses an asyncio timer rather
+    than loop.time() because the Workers event loop clock is unreliable.
+    """
+    batch: list[str] = []
+    wake = asyncio.Event()
+
+    async def tick():
+        while True:
+            await asyncio.sleep(flush_interval)
+            wake.set()
+
+    async def drain():
+        async for chunk in chunks:
+            batch.append(chunk)
+            if len(batch) >= max_batch:
+                wake.set()
+
+    timer = asyncio.create_task(tick())
+    pump = asyncio.create_task(drain())
+    try:
+        while True:
+            if batch:
+                to_send, batch = batch, []
+                yield "".join(f"data: {c}\n\n" for c in to_send)
+            elif pump.done():
+                break
+            else:
+                wake.clear()
+                await wake.wait()
+    finally:
+        timer.cancel()
+        pump.cancel()
+
+
 async def _sse_stream(env, limiter: RateLimiter, ip: str, delay: float, body: ChatRequest):
     try:
         if delay > 0:
@@ -98,16 +143,19 @@ async def _sse_stream(env, limiter: RateLimiter, ip: str, delay: float, body: Ch
         base_url, model = _config(env, body)
         messages = build_messages(body.context, body.question)
 
-        async for chunk in stream_chat_completion(
-            base_url=base_url,
-            api_key=env.NVAPI_KEY,
-            model=model,
-            messages=messages,
-            max_tokens=body.max_tokens,
-            temperature=body.temperature,
-            top_p=body.top_p,
+        async for frame in _coalesce_sse(
+            stream_chat_completion(
+                base_url=base_url,
+                api_key=env.NVAPI_KEY,
+                model=model,
+                messages=messages,
+                max_tokens=body.max_tokens,
+                temperature=body.temperature,
+                top_p=body.top_p,
+                reasoning_budget=body.reasoning_budget,
+            )
         ):
-            yield f"data: {chunk}\n\n"
+            yield frame
         yield "data: [DONE]\n\n"
     except Exception as exc:
         yield f"event: error\ndata: {json.dumps({'message': str(exc)})}\n\n"
