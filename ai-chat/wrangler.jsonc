@@ -8,7 +8,8 @@
 		"NIM_MODEL": "nvidia/nemotron-3.5-lightning-30b-a3b",
 		"NIM_MAX_TOKENS": "4096",
 		"RATE_LIMIT_SECONDS": "5",
-		"RATE_LIMIT_MAX_QUEUE": "5"
+		"RATE_LIMIT_MAX_QUEUE": "5",
+		"SSE_TOKENS_PER_SEC": "10"
 	},
 	"observability": {
 		"enabled": true

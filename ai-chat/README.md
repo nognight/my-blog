@@ -102,6 +102,7 @@ Configuration lives in `wrangler.jsonc`:
 | `NIM_MAX_TOKENS`         | `4096`                                     | Default max tokens             |
 | `RATE_LIMIT_SECONDS`     | `5`                                        | Per-IP message interval        |
 | `RATE_LIMIT_MAX_QUEUE`   | `5`                                        | Max queued messages per IP     |
+| `SSE_TOKENS_PER_SEC`     | `10`                                       | SSE output throttle (tokens/s) |
 | `NVAPI_KEY` (secret)     | —                                          | NIM API key (`Authorization: Bearer`) |
 
 ## Notes & caveats

@@ -41,14 +41,35 @@ function clampNum(value: unknown, min: number, max: number, fallback: number): n
   return Number.isFinite(n) ? Math.min(max, Math.max(min, n)) : fallback;
 }
 
-function concatBytes(chunks: Uint8Array[], size: number): Uint8Array {
-  const merged = new Uint8Array(size);
-  let offset = 0;
-  for (const chunk of chunks) {
-    merged.set(chunk, offset);
-    offset += chunk.byteLength;
+const DEFAULT_TOKENS_PER_SEC = 10;
+
+// Rough token estimate: CJK chars ≈ 1 token each, other chars ≈ 4 per token.
+function estimateTokens(text: string): number {
+  const cjk = text.match(/[\u4E00-\u9FFF\u3040-\u30FF\uAC00-\uD7AF]/g)?.length ?? 0;
+  return cjk + Math.ceil((text.length - cjk) / 4);
+}
+
+// Counts the content/reasoning tokens carried by complete SSE events in a chunk.
+function sseContentTokens(chunk: Uint8Array, decoder: TextDecoder): number {
+  let tokens = 0;
+  for (const event of decoder.decode(chunk, { stream: true }).split("\n\n")) {
+    for (const line of event.split("\n")) {
+      if (!line.startsWith("data:")) continue;
+      const data = line.slice(5).trim();
+      if (!data || data === "[DONE]") continue;
+      try {
+        const json = JSON.parse(data);
+        const delta = json?.choices?.[0]?.delta;
+        if (typeof delta?.content === "string") tokens += estimateTokens(delta.content);
+        if (typeof delta?.reasoning_content === "string") {
+          tokens += estimateTokens(delta.reasoning_content);
+        }
+      } catch {
+        // Partial or non-JSON data line — not counted.
+      }
+    }
   }
-  return merged;
+  return tokens;
 }
 
 class RateLimiter {
@@ -216,29 +237,30 @@ async function handleChat(request: Request, env: Env): Promise<Response> {
         await new Promise((resolve) => setTimeout(resolve, delay * 1000));
       }
       const reader = upstreamBody.getReader() as ReadManyReader;
-      let chunks: Uint8Array[] = [];
-      let size = 0;
+      const tokensPerSec = clampNum(env.SSE_TOKENS_PER_SEC, 0.1, 1000, DEFAULT_TOKENS_PER_SEC);
+      const decoder = new TextDecoder();
+      let nextWriteAt = 0;
+      const writePaced = async (chunk: Uint8Array): Promise<void> => {
+        const tokens = sseContentTokens(chunk, decoder);
+        const now = Date.now();
+        const target = Math.max(now, nextWriteAt);
+        if (target > now) await new Promise((resolve) => setTimeout(resolve, target - now));
+        await writer.write(chunk);
+        nextWriteAt = target + (tokens / tokensPerSec) * 1000;
+      };
       while (true) {
         if (typeof reader.readMany === "function") {
           const { value, done } = await reader.readMany();
           if (done) break;
           for (const valueChunk of value) {
-            chunks.push(valueChunk);
-            size += valueChunk.byteLength;
+            await writePaced(valueChunk);
           }
         } else {
           const { value, done } = await reader.read();
           if (done) break;
-          chunks.push(value);
-          size += value.byteLength;
-        }
-        if (size >= 16384) {
-          await writer.write(concatBytes(chunks, size));
-          chunks = [];
-          size = 0;
+          await writePaced(value);
         }
       }
-      if (chunks.length) await writer.write(concatBytes(chunks, size));
       await writer.write(encoder.encode("data: [DONE]\n\n"));
     } catch (err) {
       try {

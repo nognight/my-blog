@@ -152,6 +152,35 @@ const configJson = JSON.stringify(config).replace(/</g, '\\u003c');
 		messages.scrollTop = messages.scrollHeight;
 	}
 
+	let thinkingBase = '';
+	let thinkingDots = 0;
+	let thinkingTimer: number | undefined;
+
+	function setThinkingBase(el: HTMLElement, base: string) {
+		thinkingBase = base;
+		el.textContent = base;
+	}
+
+	function startThinkingAnimation(el: HTMLElement) {
+		thinkingDots = 0;
+		// Locale strings like "Thinking..." already end in dots; strip them and
+		// animate 1..6 dots so the count keeps looping.
+		setThinkingBase(el, (config.context.chatThinking ?? 'Thinking').replace(/\.+$/, ''));
+		const tick = () => {
+			thinkingDots = (thinkingDots % 6) + 1;
+			el.textContent = thinkingBase + '.'.repeat(thinkingDots);
+		};
+		tick();
+		thinkingTimer = window.setInterval(tick, 400);
+	}
+
+	function stopThinkingAnimation() {
+		if (thinkingTimer !== undefined) {
+			window.clearInterval(thinkingTimer);
+			thinkingTimer = undefined;
+		}
+	}
+
 	function addMessage(role: 'user' | 'assistant', text: string) {
 		const div = document.createElement('div');
 		div.className = `ask-ai-msg ask-ai-${role}`;
@@ -186,9 +215,11 @@ const configJson = JSON.stringify(config).replace(/</g, '\\u003c');
 		input.value = '';
 		addMessage('user', question);
 
-		const thinking = addMessage('assistant', config.context.chatThinking ?? '…');
+		const thinking = addMessage('assistant', '');
 		streaming = true;
 		sendBtn.disabled = true;
+		input.disabled = true;
+		startThinkingAnimation(thinking);
 
 		try {
 			const res = await fetch(config.endpoint, {
@@ -225,11 +256,12 @@ const configJson = JSON.stringify(config).replace(/</g, '\\u003c');
 					if (event === 'queued') {
 						try {
 							const j = JSON.parse(data) as { wait_seconds: number };
-							thinking.textContent = `⏳ ${j.wait_seconds.toFixed(1)}s...`;
+							setThinkingBase(thinking, `⏳ ${j.wait_seconds.toFixed(1)}s`);
 						} catch {
 							/* ignore malformed payload */
 						}
 					} else if (event === 'error') {
+						stopThinkingAnimation();
 						try {
 							const j = JSON.parse(data) as { message: string };
 							throw new Error(j.message);
@@ -246,6 +278,7 @@ const configJson = JSON.stringify(config).replace(/</g, '\\u003c');
 							const delta = j.choices?.[0]?.delta?.content ?? '';
 							if (delta) {
 								if (!started) {
+									stopThinkingAnimation();
 									thinking.textContent = delta;
 									started = true;
 								} else {
@@ -259,11 +292,14 @@ const configJson = JSON.stringify(config).replace(/</g, '\\u003c');
 				}
 			}
 		} catch (err) {
+			stopThinkingAnimation();
 			thinking.textContent = config.context.chatError ?? 'Error';
 			console.error(err);
 		} finally {
+			stopThinkingAnimation();
 			streaming = false;
 			sendBtn.disabled = false;
+			input.disabled = false;
 			input.focus();
 		}
 	}
@@ -430,6 +466,10 @@ const configJson = JSON.stringify(config).replace(/</g, '\\u003c');
 		font-family: var(--font-atkinson);
 		font-size: 0.9em;
 		resize: none;
+	}
+	.ask-ai-input:disabled {
+		opacity: 0.6;
+		cursor: wait;
 	}
 	.ask-ai-send {
 		align-self: stretch;
