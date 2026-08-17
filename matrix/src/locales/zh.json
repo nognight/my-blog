@@ -33,7 +33,15 @@
   "dpWhatText": "要解决问题需要做什么？在选择要构建或更改的内容之前，我会评估可能的方案、权衡利弊，以及每个决策的影响。",
   "dpHowTitle": "怎么做（How）",
   "dpHowText": "应该如何实现，又如何确保它能正常工作？我会考虑架构、实现细节、测试、可观测性和运维要求。",
-  "dpHowItems": ["可扩展性", "可靠性", "可维护性", "可观测性", "性能", "运维复杂度", "长期技术债务"],
+  "dpHowItems": [
+    "可扩展性",
+    "可靠性",
+    "可维护性",
+    "可观测性",
+    "性能",
+    "运维复杂度",
+    "长期技术债务"
+  ],
   "dpWhyAgainTitle": "再次追问为什么（Why — Again）",
   "dpWhyAgainText": "为什么系统的行为与我们预期的不同？实现之后，我会对照最初的问题验证结果，并持续调查意外行为。",
   "dpIterationText": "意外行为不是简单的失败——它是新的信息。我会用它来重新审视<strong>为什么（Why）</strong>，重新定义<strong>做什么（What）</strong>，改进<strong>怎么做（How）</strong>，并继续这个循环。",
@@ -44,7 +52,11 @@
   "educationInfo": {
     "school": "中国民用航空飞行学院",
     "degree": "计算机科学学士",
-    "items": ["C# 游戏", "JSP 网页", "学生考勤系统"],
+    "items": [
+      "C# 游戏",
+      "JSP 网页",
+      "学生考勤系统"
+    ],
     "technologies": "技术: Java, Mysql, C#"
   },
   "lookingForText": "我有兴趣在从事后端系统、分布式系统、云原生应用和平台工程的团队中担任高级软件工程师/技术主管的机会。",
@@ -70,20 +82,136 @@
     "跨后端、前端、基础设施和运维开展工作"
   ],
   "skillsCategories": [
-    { "title": "🔧 后端工程", "items": ["Java", "Kotlin", "Go", "Python", "Vert.x", "Spring Boot", "Gin", "REST API", "微服务", "分布式系统", "并发编程", "外部 API 集成"] },
-    { "title": "🏗️ 分布式系统", "items": ["微服务架构", "服务间通信", "API 设计", "分布式数据存储", "高并发系统", "故障分析", "性能优化", "生产环境故障排查", "系统现代化"] },
-    { "title": "☁️ 云与基础设施", "items": ["AWS", "应用架构", "计算与网络", "数据库服务", "存储", "监控", "生产部署", "高负载架构", "云迁移", "Google Cloud Platform", "阿里云", "Kubernetes", "Docker", "Linux", "CI/CD", "监控", "日志", "生产运维"] },
-    { "title": "🎨 前端工程", "items": ["TypeScript", "JavaScript", "React", "Next.js", "Vue.js"] },
-    { "title": "💾 数据库", "items": ["MySQL", "Redis", "Cassandra", "MongoDB"] },
-    { "title": "🔄 CI/CD", "items": ["GitHub Actions", "GitLab CI", "CircleCI"] },
-    { "title": "📋 开发与架构", "items": ["微服务", "分布式系统", "云架构", "代码审查", "设计评审", "静态分析", "编码规范", "技术文档", "架构可视化", "Jira", "Confluence", "Redmine", "Mermaid", "UML", "ESLint", "SonarLint"] }
+    {
+      "title": "🔧 后端工程",
+      "items": [
+        "Java",
+        "Kotlin",
+        "Go",
+        "Python",
+        "Vert.x",
+        "Spring Boot",
+        "Gin",
+        "REST API",
+        "微服务",
+        "分布式系统",
+        "并发编程",
+        "外部 API 集成"
+      ]
+    },
+    {
+      "title": "🏗️ 分布式系统",
+      "items": [
+        "微服务架构",
+        "服务间通信",
+        "API 设计",
+        "分布式数据存储",
+        "高并发系统",
+        "故障分析",
+        "性能优化",
+        "生产环境故障排查",
+        "系统现代化"
+      ]
+    },
+    {
+      "title": "☁️ 云与基础设施",
+      "items": [
+        "AWS",
+        "应用架构",
+        "计算与网络",
+        "数据库服务",
+        "存储",
+        "监控",
+        "生产部署",
+        "高负载架构",
+        "云迁移",
+        "Google Cloud Platform",
+        "阿里云",
+        "Kubernetes",
+        "Docker",
+        "Linux",
+        "CI/CD",
+        "监控",
+        "日志",
+        "生产运维"
+      ]
+    },
+    {
+      "title": "🎨 前端工程",
+      "items": [
+        "TypeScript",
+        "JavaScript",
+        "React",
+        "Next.js",
+        "Vue.js"
+      ]
+    },
+    {
+      "title": "💾 数据库",
+      "items": [
+        "MySQL",
+        "Redis",
+        "Cassandra",
+        "MongoDB"
+      ]
+    },
+    {
+      "title": "🔄 CI/CD",
+      "items": [
+        "GitHub Actions",
+        "GitLab CI",
+        "CircleCI"
+      ]
+    },
+    {
+      "title": "📋 开发与架构",
+      "items": [
+        "微服务",
+        "分布式系统",
+        "云架构",
+        "代码审查",
+        "设计评审",
+        "静态分析",
+        "编码规范",
+        "技术文档",
+        "架构可视化",
+        "Jira",
+        "Confluence",
+        "Redmine",
+        "Mermaid",
+        "UML",
+        "ESLint",
+        "SonarLint"
+      ]
+    }
   ],
   "architectureTitle": "架构",
-  "architectureItems": ["系统架构设计", "技术选型", "API 设计", "数据库架构", "云架构", "微服务设计", "性能架构"],
+  "architectureItems": [
+    "系统架构设计",
+    "技术选型",
+    "API 设计",
+    "数据库架构",
+    "云架构",
+    "微服务设计",
+    "性能架构"
+  ],
   "engineeringQualityTitle": "工程质量",
-  "engineeringQualityItems": ["代码审查", "设计评审", "静态分析", "编码规范", "技术文档", "架构可视化"],
+  "engineeringQualityItems": [
+    "代码审查",
+    "设计评审",
+    "静态分析",
+    "编码规范",
+    "技术文档",
+    "架构可视化"
+  ],
   "teamSupportTitle": "团队支持",
-  "teamSupportItems": ["技术指导", "问题解决", "任务分解", "技术决策", "开发流程改进"],
+  "teamSupportItems": [
+    "技术指导",
+    "问题解决",
+    "任务分解",
+    "技术决策",
+    "开发流程改进"
+  ],
   "teamSupportTools": "工具: Jira, Confluence, Redmine, Mermaid, UML, ESLint, SonarLint",
   "experienceJobs": [
     {
@@ -92,7 +220,13 @@
       "role": "软件工程师",
       "title": "RCS 融合通信系统",
       "description": "职业生涯始于云通信基础设施和系统运维领域。",
-      "items": ["开发系统监控工具", "系统测试", "生产维护", "数据中心部署", "使用 Python 和 Bash 实现自动化"],
+      "items": [
+        "开发系统监控工具",
+        "系统测试",
+        "生产维护",
+        "数据中心部署",
+        "使用 Python 和 Bash 实现自动化"
+      ],
       "technologies": "技术: Java, Python, Bash, Linux, SUSE"
     },
     {
@@ -101,9 +235,20 @@
       "role": "软件工程师 / 副技术主管",
       "title": "微信公众号平台",
       "description": "为电信运营商开发企业系统，包括 Web 应用和外部系统集成。",
-      "items": ["需求分析", "系统设计", "Web 应用开发", "外部系统集成", "API/接口设计"],
+      "items": [
+        "需求分析",
+        "系统设计",
+        "Web 应用开发",
+        "外部系统集成",
+        "API/接口设计"
+      ],
       "highlightsTitle": "亮点",
-      "highlights": ["为中国联通和中国电信开发系统", "开发微信小程序", "2017 年获合作伙伴奖", "2018 年获创新合作贡献奖"],
+      "highlights": [
+        "为中国联通和中国电信开发系统",
+        "开发微信小程序",
+        "2017 年获合作伙伴奖",
+        "2018 年获创新合作贡献奖"
+      ],
       "technologies": "技术: Java, JavaScript, Python, Lua, Redis, MySQL, MongoDB, Linux"
     },
     {
@@ -112,9 +257,19 @@
       "role": "技术主管",
       "title": "特权中心平台",
       "description": "主导一个集成多项外部服务的大型企业 Web 平台的开发。",
-      "items": ["系统架构与设计", "后端开发", "前端开发", "外部 API 集成", "技术领导"],
+      "items": [
+        "系统架构与设计",
+        "后端开发",
+        "前端开发",
+        "外部 API 集成",
+        "技术领导"
+      ],
       "highlightsTitle": "亮点",
-      "highlights": ["支付集成: 微信支付、支付宝、WoPay", "身份与账户集成: 基于 OAuth 2.0 的京东会员系统", "内部平台: 发票统计系统"],
+      "highlights": [
+        "支付集成: 微信支付、支付宝、WoPay",
+        "身份与账户集成: 基于 OAuth 2.0 的京东会员系统",
+        "内部平台: 发票统计系统"
+      ],
       "technologies": "技术: Vue.js, JavaScript, Python, 阿里云, OAuth 2.0"
     },
     {
@@ -124,38 +279,98 @@
       "title": "企业系统",
       "description": "参与多个企业系统，涵盖数据平台、医疗系统和云迁移。",
       "sections": [
-        { "title": "数据平台 / DWH", "description": "DWH 架构与开发、数据导入工具开发、AWS 开发环境、测试与部署" },
-        { "title": "医疗系统", "description": "缺陷修复、数据库性能优化、新功能开发" },
-        { "title": "KINTO Nimbus — 云迁移与 CI/CD", "description": "AWS 迁移、CI/CD 架构、性能优化、新功能开发、部署自动化" }
+        {
+          "title": "数据平台 / DWH",
+          "description": "DWH 架构与开发、数据导入工具开发、AWS 开发环境、测试与部署"
+        },
+        {
+          "title": "医疗系统",
+          "description": "缺陷修复、数据库性能优化、新功能开发"
+        },
+        {
+          "title": "KINTO Nimbus — 云迁移与 CI/CD",
+          "description": "AWS 迁移、CI/CD 架构、性能优化、新功能开发、部署自动化"
+        }
       ],
       "technologies": "技术: Java, Python, AWS, JavaScript, Node.js, AngularJS, MongoDB"
     },
     {
-      "period": "2021 — 2023",
-      "company": "New Idea",
-      "role": "软件工程师 / 副技术主管",
-      "title": "乐天认证存储迁移",
-      "description": "涉及现有认证存储架构迁移的大型系统现代化项目。",
-      "items": ["技术调研", "架构设计", "详细设计", "后端开发", "生产部署", "系统监控", "故障调查", "性能优化", "生产数据维护", "代码审查", "技术支持"],
+      "period": "2021 — 2022",
+      "company": "NEC China",
+      "role": "软件工程师",
+      "title": "小田急商场积分系统重构",
+      "description": "对涉及积分赋予、积分使用和积分结算的现有系统进行重构。",
+      "items": [
+        "后端开发",
+        "生产部署",
+        "系统监控",
+        "故障调查",
+        "性能优化",
+        "生产数据维护",
+        "代码审查",
+        "技术支持"
+      ],
       "achievementTitle": "关键成果",
-      "achievement": "成功将大型生产存储系统从 Oracle 迁移到 Cassandra。",
-      "technologies": "技术: Kotlin, Vert.x, Coroutines, Cassandra, Kubernetes, GCP, GitLab CI, ELK"
+      "achievement": "成功将积分赋予的定期批处理从定期批处理迁移到事件驱动异步处理。",
+      "technologies": "技术: Java, SpringBoot, MySQL, Redis, Spring Batch, Kafka"
     },
     {
-      "period": "2023 — 2026",
-      "company": "IP 咨询",
-      "role": "软件工程师 / 技术主管",
-      "title": "高尔夫管理平台",
-      "description": "在一个现代化的云端高尔夫管理平台担任技术主管。",
-      "items": ["高并发在线服务", "高尔夫球场管理功能", "外部集成", "实时计分功能"],
+      "period": "2022 — 2024",
+      "company": "Rakuten Inc. (contract)",
+      "role": "软件工程师 / Sub Team Leader",
+      "title": "Rakuten认证存储重构与迁移",
+      "description": "涉及现有认证存储架构迁移的大型系统现代化项目。",
+      "items": [
+        "高并发API服务",
+        "事件驱动架构",
+        "数据库触发器",
+        "Code Generation",
+        "k8s部署",
+        "私有/共有云部署",
+        "故障调查",
+        "性能优化",
+        "生产数据维护",
+        "技术支持"
+      ],
+      "achievementTitle": "关键成果",
+      "achievement": "成功发布全新的认证系统并且将大型生产系统数据从多个服务聚合迁移到新系统中。",
+      "technologies": "技术: Kotlin, Vert.x, Coroutines, Cassandra,Kafka, Kubernetes, GCP, GitLab CI, ELK"
+    },
+    {
+      "period": "2024 — 2026",
+      "company": "TechnoCraft Inc. (contract)",
+      "role": "软件工程师 / 技术Leader",
+      "title": "高尔夫系统运营平台",
+      "description": "现代化的云端高尔夫运营平台担任技术Leader。",
+      "items": [
+        "高并发在线服务",
+        "微服务架构设计",
+        "事件驱动架构",
+        "外部OAuth2集成",
+        "Tracing和监控",
+        "代码审查",
+        "技术支持"
+      ],
       "keyProjectsTitle": "关键项目",
       "keyProjects": [
-        { "name": "球童评价系统", "description": "设计并开发新的球童评价功能" },
-        { "name": "GORA 集成", "description": "将球场内部计分系统与 GORA 集成" },
-        { "name": "高尔夫协会网站迁移", "description": "迁移到 AWS" },
-        { "name": "在线赛事平台", "description": "针对高并发流量设计" }
+        {
+          "name": "球童评价系统",
+          "description": "设计并开发新的球童评价功能, 绘制球童评价图表, 并与现有系统集成"
+        },
+        {
+          "name": "GORA 集成",
+          "description": "将球场内部计分系统与 Rakuten GORA 集成, 使用事件驱动模型"
+        },
+        {
+          "name": "高尔夫协会网站迁移",
+          "description": "将单机器服务迁移到 AWS, 并且使用负载均衡，并更具体策略自动扩展"
+        },
+        {
+          "name": "在线赛事平台",
+          "description": "针对高并发流量设计，使用事件驱动，与定期批处理和实时计分系统集成"
+        }
       ],
-      "technologies": "技术: Go, Gin, TypeScript, React, Next.js, AWS, CircleCI"
+      "technologies": "技术: Go, Gin, TypeScript, React, Next.js, AWS, CircleCI, EventDriven Architecture, WebSocket, Redis, MySQL, GitHub Actions"
     }
   ]
 }

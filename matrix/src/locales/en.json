@@ -33,7 +33,15 @@
   "dpWhatText": "What needs to be done to solve the problem? I evaluate possible approaches, trade-offs, and the impact of each decision before choosing what to build or change.",
   "dpHowTitle": "How",
   "dpHowText": "How should it be implemented, and how can we ensure it works? I consider architecture, implementation details, testing, observability, and operational requirements.",
-  "dpHowItems": ["Scalability", "Reliability", "Maintainability", "Observability", "Performance", "Operational complexity", "Long-term technical debt"],
+  "dpHowItems": [
+    "Scalability",
+    "Reliability",
+    "Maintainability",
+    "Observability",
+    "Performance",
+    "Operational complexity",
+    "Long-term technical debt"
+  ],
   "dpWhyAgainTitle": "Why — Again",
   "dpWhyAgainText": "Why did the system behave differently from what we expected? After implementation, I verify the result against the original problem and continuously investigate unexpected behavior.",
   "dpIterationText": "Unexpected behavior is not simply a failure — it is new information. I use it to revisit the <strong>Why</strong>, redefine the <strong>What</strong>, improve the <strong>How</strong>, and continue the cycle.",
@@ -44,7 +52,11 @@
   "educationInfo": {
     "school": "Civil Aviation Flight University of China",
     "degree": "B.S. in Computer Science",
-    "items": ["C# game", "JSP Web Page", "Student Attendance System"],
+    "items": [
+      "C# game",
+      "JSP Web Page",
+      "Student Attendance System"
+    ],
     "technologies": "Technologies: Java, Mysql, C#"
   },
   "lookingForText": "I am interested in opportunities where I can contribute as a Senior Software Engineer / Tech Lead, particularly in teams working on backend systems, distributed systems, cloud-native applications, and platform engineering.",
@@ -70,20 +82,136 @@
     "Work across backend, frontend, infrastructure, and operations"
   ],
   "skillsCategories": [
-    { "title": "🔧 Backend Engineering", "items": ["Java", "Kotlin", "Go", "Python", "Vert.x", "Spring Boot", "Gin", "REST APIs", "Microservices", "Distributed systems", "Concurrent programming", "External API integration"] },
-    { "title": "🏗️ Distributed Systems", "items": ["Microservice architecture", "Service-to-service communication", "API design", "Distributed data storage", "High-concurrency systems", "Fault analysis", "Performance optimization", "Production troubleshooting", "System modernization"] },
-    { "title": "☁️ Cloud & Infrastructure", "items": ["AWS", "Application architecture", "Compute and networking", "Database services", "Storage", "Monitoring", "Production deployment", "High-load architecture", "Cloud migration", "Google Cloud Platform", "Alibaba Cloud", "Kubernetes", "Docker", "Linux", "CI/CD", "Monitoring", "Logging", "Production operations"] },
-    { "title": "🎨 Frontend Engineering", "items": ["TypeScript", "JavaScript", "React", "Next.js", "Vue.js"] },
-    { "title": "💾 Databases", "items": ["MySQL", "Redis", "Cassandra", "MongoDB"] },
-    { "title": "🔄 CI/CD", "items": ["GitHub Actions", "GitLab CI", "CircleCI"] },
-    { "title": "📋 Development & Architecture", "items": ["Microservices", "Distributed Systems", "Cloud Architecture", "Code Review", "Design review", "Static analysis", "Coding standards", "Technical documentation", "Architecture visualization", "Jira", "Confluence", "Redmine", "Mermaid", "UML", "ESLint", "SonarLint"] }
+    {
+      "title": "🔧 Backend Engineering",
+      "items": [
+        "Java",
+        "Kotlin",
+        "Go",
+        "Python",
+        "Vert.x",
+        "Spring Boot",
+        "Gin",
+        "REST APIs",
+        "Microservices",
+        "Distributed systems",
+        "Concurrent programming",
+        "External API integration"
+      ]
+    },
+    {
+      "title": "🏗️ Distributed Systems",
+      "items": [
+        "Microservice architecture",
+        "Service-to-service communication",
+        "API design",
+        "Distributed data storage",
+        "High-concurrency systems",
+        "Fault analysis",
+        "Performance optimization",
+        "Production troubleshooting",
+        "System modernization"
+      ]
+    },
+    {
+      "title": "☁️ Cloud & Infrastructure",
+      "items": [
+        "AWS",
+        "Application architecture",
+        "Compute and networking",
+        "Database services",
+        "Storage",
+        "Monitoring",
+        "Production deployment",
+        "High-load architecture",
+        "Cloud migration",
+        "Google Cloud Platform",
+        "Alibaba Cloud",
+        "Kubernetes",
+        "Docker",
+        "Linux",
+        "CI/CD",
+        "Monitoring",
+        "Logging",
+        "Production operations"
+      ]
+    },
+    {
+      "title": "🎨 Frontend Engineering",
+      "items": [
+        "TypeScript",
+        "JavaScript",
+        "React",
+        "Next.js",
+        "Vue.js"
+      ]
+    },
+    {
+      "title": "💾 Databases",
+      "items": [
+        "MySQL",
+        "Redis",
+        "Cassandra",
+        "MongoDB"
+      ]
+    },
+    {
+      "title": "🔄 CI/CD",
+      "items": [
+        "GitHub Actions",
+        "GitLab CI",
+        "CircleCI"
+      ]
+    },
+    {
+      "title": "📋 Development & Architecture",
+      "items": [
+        "Microservices",
+        "Distributed Systems",
+        "Cloud Architecture",
+        "Code Review",
+        "Design review",
+        "Static analysis",
+        "Coding standards",
+        "Technical documentation",
+        "Architecture visualization",
+        "Jira",
+        "Confluence",
+        "Redmine",
+        "Mermaid",
+        "UML",
+        "ESLint",
+        "SonarLint"
+      ]
+    }
   ],
   "architectureTitle": "Architecture",
-  "architectureItems": ["System architecture design", "Technology selection", "API design", "Database architecture", "Cloud architecture", "Microservice design", "Performance architecture"],
+  "architectureItems": [
+    "System architecture design",
+    "Technology selection",
+    "API design",
+    "Database architecture",
+    "Cloud architecture",
+    "Microservice design",
+    "Performance architecture"
+  ],
   "engineeringQualityTitle": "Engineering Quality",
-  "engineeringQualityItems": ["Code review", "Design review", "Static analysis", "Coding standards", "Technical documentation", "Architecture visualization"],
+  "engineeringQualityItems": [
+    "Code review",
+    "Design review",
+    "Static analysis",
+    "Coding standards",
+    "Technical documentation",
+    "Architecture visualization"
+  ],
   "teamSupportTitle": "Team Support",
-  "teamSupportItems": ["Technical mentoring", "Problem solving", "Task decomposition", "Technical decision making", "Development process improvement"],
+  "teamSupportItems": [
+    "Technical mentoring",
+    "Problem solving",
+    "Task decomposition",
+    "Technical decision making",
+    "Development process improvement"
+  ],
   "teamSupportTools": "Tools: Jira, Confluence, Redmine, Mermaid, UML, ESLint, SonarLint",
   "experienceJobs": [
     {
@@ -92,7 +220,13 @@
       "role": "Software Engineer",
       "title": "RCS Integrated Communication System",
       "description": "Started my career working on cloud communication infrastructure and system operations.",
-      "items": ["Developed system monitoring tools", "System testing", "Production maintenance", "Data center deployment", "Automation using Python and Bash"],
+      "items": [
+        "Developed system monitoring tools",
+        "System testing",
+        "Production maintenance",
+        "Data center deployment",
+        "Automation using Python and Bash"
+      ],
       "technologies": "Technologies: Java, Python, Bash, Linux, SUSE"
     },
     {
@@ -101,9 +235,20 @@
       "role": "Software Engineer / Sub Tech Lead",
       "title": "WeChat Official Account Platform",
       "description": "Developed enterprise systems for telecom operators, including Web applications and integrations with external systems.",
-      "items": ["Requirements analysis", "System design", "Web application development", "External system integration", "API/interface design"],
+      "items": [
+        "Requirements analysis",
+        "System design",
+        "Web application development",
+        "External system integration",
+        "API/interface design"
+      ],
       "highlightsTitle": "Highlights",
-      "highlights": ["Developed systems for China Unicom and China Telecom", "Developed WeChat Mini Programs", "Received Partner Award in 2017", "Received Innovation Cooperation Contribution Award in 2018"],
+      "highlights": [
+        "Developed systems for China Unicom and China Telecom",
+        "Developed WeChat Mini Programs",
+        "Received Partner Award in 2017",
+        "Received Innovation Cooperation Contribution Award in 2018"
+      ],
       "technologies": "Technologies: Java, JavaScript, Python, Lua, Redis, MySQL, MongoDB, Linux"
     },
     {
@@ -112,9 +257,19 @@
       "role": "Tech Lead",
       "title": "Privilege Center Platform",
       "description": "Led the development of a large enterprise web platform integrating multiple external services.",
-      "items": ["System architecture and design", "Backend development", "Frontend development", "External API integration", "Technical leadership"],
+      "items": [
+        "System architecture and design",
+        "Backend development",
+        "Frontend development",
+        "External API integration",
+        "Technical leadership"
+      ],
       "highlightsTitle": "Highlights",
-      "highlights": ["Payment Integration: WeChat Pay, Alipay, WoPay", "Identity & Account Integration: JD.com membership system using OAuth 2.0", "Internal Platform: Invoice statistics system"],
+      "highlights": [
+        "Payment Integration: WeChat Pay, Alipay, WoPay",
+        "Identity & Account Integration: JD.com membership system using OAuth 2.0",
+        "Internal Platform: Invoice statistics system"
+      ],
       "technologies": "Technologies: Vue.js, JavaScript, Python, Alibaba Cloud, OAuth 2.0"
     },
     {
@@ -124,9 +279,18 @@
       "title": "Enterprise Systems",
       "description": "Worked on multiple enterprise systems covering data platforms, healthcare systems, and cloud migration.",
       "sections": [
-        { "title": "Data Platform / DWH", "description": "DWH architecture and development, Data import tool development, AWS development environment, Testing and deployment" },
-        { "title": "Healthcare System", "description": "Bug fixing, Database performance optimization, New feature development" },
-        { "title": "KINTO Nimbus — Cloud Migration & CI/CD", "description": "AWS migration, CI/CD architecture, Performance optimization, New feature development, Deployment automation" }
+        {
+          "title": "Data Platform / DWH",
+          "description": "DWH architecture and development, Data import tool development, AWS development environment, Testing and deployment"
+        },
+        {
+          "title": "Healthcare System",
+          "description": "Bug fixing, Database performance optimization, New feature development"
+        },
+        {
+          "title": "KINTO Nimbus — Cloud Migration & CI/CD",
+          "description": "AWS migration, CI/CD architecture, Performance optimization, New feature development, Deployment automation"
+        }
       ],
       "technologies": "Technologies: Java, Python, AWS, JavaScript, Node.js, AngularJS, MongoDB"
     },
@@ -136,7 +300,19 @@
       "role": "Software Engineer / Sub Tech Lead",
       "title": "Rakuten Authentication Storage Migration",
       "description": "Large-scale system modernization project involving migration of an existing authentication storage architecture.",
-      "items": ["Technical investigation", "Architecture design", "Detailed design", "Backend development", "Production deployment", "System monitoring", "Incident investigation", "Performance optimization", "Production data maintenance", "Code review", "Technical support"],
+      "items": [
+        "Technical investigation",
+        "Architecture design",
+        "Detailed design",
+        "Backend development",
+        "Production deployment",
+        "System monitoring",
+        "Incident investigation",
+        "Performance optimization",
+        "Production data maintenance",
+        "Code review",
+        "Technical support"
+      ],
       "achievementTitle": "Key Achievement",
       "achievement": "Successfully migrated a large-scale production storage system from Oracle to Cassandra.",
       "technologies": "Technologies: Kotlin, Vert.x, Coroutines, Cassandra, Kubernetes, GCP, GitLab CI, ELK"
@@ -147,13 +323,30 @@
       "role": "Software Engineer / Tech Lead",
       "title": "Golf Management Platform",
       "description": "Worked as a Tech Lead on a modern cloud-based golf management platform.",
-      "items": ["High-concurrency online services", "Golf course management functionality", "External integrations", "Real-time scoring features"],
+      "items": [
+        "High-concurrency online services",
+        "Golf course management functionality",
+        "External integrations",
+        "Real-time scoring features"
+      ],
       "keyProjectsTitle": "Key Projects",
       "keyProjects": [
-        { "name": "Caddie Evaluation System", "description": "Designed and developed a new caddie evaluation feature" },
-        { "name": "GORA Integration", "description": "Integrated golf course internal scoring systems with GORA" },
-        { "name": "Golf Association Website Migration", "description": "Migrated to AWS" },
-        { "name": "Online Competition Platform", "description": "Designed for high-concurrency traffic" }
+        {
+          "name": "Caddie Evaluation System",
+          "description": "Designed and developed a new caddie evaluation feature"
+        },
+        {
+          "name": "GORA Integration",
+          "description": "Integrated golf course internal scoring systems with GORA"
+        },
+        {
+          "name": "Golf Association Website Migration",
+          "description": "Migrated to AWS"
+        },
+        {
+          "name": "Online Competition Platform",
+          "description": "Designed for high-concurrency traffic"
+        }
       ],
       "technologies": "Technologies: Go, Gin, TypeScript, React, Next.js, AWS, CircleCI"
     }
