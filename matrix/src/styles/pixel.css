@@ -9,7 +9,14 @@
     --gray:        light grey (secondary text)
     --gray-light:  dark purple (panels / code background)
     --gray-dark:   main body text (also headings)
-  Styling: crisp corners, chunky borders, hard offset shadows (no blur).
+
+  Pixel design features:
+    - Retro pixel font stack (Press Start 2P / VT323 / monospace)
+    - Crisp corners, chunky borders, hard offset shadows (no blur)
+    - Jagged "stepped" pixel outlines on panels via clip-path
+    - 8-bit style interactive elements (links / buttons)
+    - Scanline overlay for an authentic CRT / arcade feel
+    - Hard "step" transitions (no easing) for a pixel-perfect look
  */
 
 :root {
@@ -23,10 +30,14 @@
 	--box-shadow:
 		4px 4px 0 rgba(0, 0, 0, 40%), 8px 8px 0 rgba(0, 0, 0, 25%),
 		0 0 0 0 rgba(0, 0, 0, 0%);
+	--pixel-font:
+		'Press Start 2P', 'VT323', 'Courier New', ui-monospace, monospace;
+	--pixel-font-body:
+		'VT323', 'Press Start 2P', 'Courier New', ui-monospace, monospace;
 }
 
 body {
-	font-family: var(--font-atkinson);
+	font-family: var(--pixel-font-body);
 	margin: 0;
 	padding: 0;
 	text-align: left;
@@ -39,6 +50,25 @@ body {
 	font-size: 20px;
 	line-height: 1.7;
 	image-rendering: pixelated;
+	/* CRT scanline overlay for a retro arcade feel */
+	position: relative;
+}
+
+/* Retro scanline effect */
+body::after {
+	content: '';
+	position: fixed;
+	inset: 0;
+	pointer-events: none;
+	z-index: 9999;
+	background: repeating-linear-gradient(
+		to bottom,
+		rgba(0, 0, 0, 0) 0px,
+		rgba(0, 0, 0, 0) 3px,
+		rgba(0, 0, 0, 0.12) 3px,
+		rgba(0, 0, 0, 0.12) 4px
+	);
+	mix-blend-mode: multiply;
 }
 
 main {
@@ -48,6 +78,7 @@ main {
 	padding: 3em 1em;
 }
 
+/* Headings use the blocky retro display font */
 h1,
 h2,
 h3,
@@ -56,28 +87,38 @@ h5,
 h6 {
 	margin: 0 0 0.5rem 0;
 	color: rgb(var(--gray-dark));
-	line-height: 1.2;
+	line-height: 1.3;
 	text-shadow: 3px 3px 0 rgba(0, 0, 0, 50%);
+	font-family: var(--pixel-font);
+	font-weight: 400;
+	letter-spacing: 1px;
+	/* hard stepped shadow to keep the pixel look, no blur */
 }
 
 h1 {
-	font-size: 3.052em;
+	font-size: 2em;
+	margin-bottom: 0.75em;
 }
 
 h2 {
-	font-size: 2.441em;
+	font-size: 1.6em;
 }
 
 h3 {
-	font-size: 1.953em;
+	font-size: 1.35em;
 }
 
 h4 {
-	font-size: 1.563em;
+	font-size: 1.15em;
 }
 
 h5 {
-	font-size: 1.25em;
+	font-size: 1em;
+}
+
+h6 {
+	font-size: 0.85em;
+	text-transform: uppercase;
 }
 
 strong,
@@ -90,12 +131,31 @@ a {
 	color: var(--accent);
 	text-decoration: none;
 	text-shadow: 2px 2px 0 rgba(0, 0, 0, 50%);
+	position: relative;
+	/* hard "step" transition — instant, no easing */
+	transition: none;
 }
 
+/* 8-bit style link hover: pixelated underline + color flip */
 a:hover {
 	color: #ffec27;
 	text-shadow: 2px 2px 0 rgba(0, 0, 0, 50%);
-	text-decoration: underline;
+	text-decoration: none;
+}
+
+a:hover::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: -2px;
+	height: 3px;
+	background: #ffec27;
+	/* stepped pixel underline */
+	clip-path: polygon(
+		0% 0%, 25% 0%, 25% 50%, 50% 50%, 50% 0%, 75% 0%,
+		75% 100%, 50% 100%, 50% 50%, 25% 50%, 25% 100%, 0% 100%
+	);
 }
 
 p {
@@ -111,16 +171,26 @@ textarea {
 	font-size: 16px;
 	background-color: rgb(var(--gray-light));
 	color: rgb(var(--gray-dark));
-	border: 4px solid var(--black);
+	border: 4px solid rgb(var(--black));
 	border-radius: 0;
+	font-family: var(--pixel-font-body);
+	image-rendering: pixelated;
 }
 
 input {
 	font-size: 16px;
 	background-color: rgb(var(--gray-light));
 	color: rgb(var(--gray-dark));
-	border: 4px solid var(--black);
+	border: 4px solid rgb(var(--black));
 	border-radius: 0;
+	font-family: var(--pixel-font-body);
+	image-rendering: pixelated;
+}
+
+textarea:focus,
+input:focus {
+	outline: 3px solid var(--accent);
+	outline-offset: 2px;
 }
 
 table {
@@ -136,12 +206,18 @@ table td {
 	padding: 0.5em;
 }
 
+table th {
+	background-color: rgba(var(--accent-dark), 40%);
+	text-shadow: 2px 2px 0 rgba(0, 0, 0, 50%);
+}
+
 img {
 	max-width: 100%;
 	height: auto;
 	border-radius: 0;
-	border: 4px solid var(--black);
+	border: 4px solid rgb(var(--black));
 	box-shadow: 4px 4px 0 rgba(0, 0, 0, 40%);
+	image-rendering: pixelated;
 }
 
 code {
@@ -150,6 +226,8 @@ code {
 	border-radius: 0;
 	color: #00e436;
 	border: 2px solid rgba(var(--black), 40%);
+	font-family: var(--pixel-font-body);
+	image-rendering: pixelated;
 }
 
 pre {
@@ -157,8 +235,14 @@ pre {
 	border-radius: 0;
 	overflow-x: auto;
 	background-color: #0f1220;
-	border: 4px solid var(--black);
+	border: 4px solid rgb(var(--black));
 	box-shadow: 4px 4px 0 rgba(0, 0, 0, 40%);
+	/* jagged pixel corner cut on the top-right */
+	clip-path: polygon(
+		0% 0%, calc(100% - 24px) 0%, 100% 24px, 100% 100%,
+		24px 100%, 0% calc(100% - 24px)
+	);
+	font-family: var(--pixel-font-body);
 }
 
 pre>code {
@@ -171,16 +255,24 @@ blockquote {
 	margin: 0;
 	font-size: 1.333em;
 	color: #ffccaa;
+	/* stepped left border */
+	border-image: repeating-linear-gradient(
+		to bottom,
+		var(--accent) 0px,
+		var(--accent) 8px,
+		transparent 8px,
+		transparent 16px
+	) 1;
 }
 
 hr {
 	border: none;
-	border-top: 4px solid var(--black);
+	border-top: 4px solid rgb(var(--black));
 }
 
 @media (max-width: 720px) {
 	body {
-		font-size: 18px;
+		font-size: 16px;
 	}
 
 	main {
@@ -188,19 +280,23 @@ hr {
 	}
 
 	h1 {
-		font-size: 2.441em;
+		font-size: 1.6em;
 	}
 
 	h2 {
-		font-size: 1.953em;
+		font-size: 1.35em;
 	}
 
 	h3 {
-		font-size: 1.563em;
+		font-size: 1.15em;
 	}
 
 	h4 {
-		font-size: 1.25em;
+		font-size: 1em;
+	}
+
+	h5 {
+		font-size: 0.9em;
 	}
 
 	pre {
@@ -247,4 +343,35 @@ hr {
 	background: #29adff;
 	border: 2px solid #0f1220;
 	border-radius: 0;
+	/* stepped pixel thumb */
+	box-shadow: inset -3px 0 0 rgba(0, 0, 0, 30%);
+}
+
+/* A classic retro button look for any element carrying the pixel-btn class
+   (crisp edges, hard offset shadow, stepped pressed state). */
+.pixel-btn {
+	display: inline-block;
+	font-family: var(--pixel-font);
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	padding: 0.75em 1.25em;
+	color: rgb(var(--gray-dark));
+	background-color: var(--accent);
+	border: 3px solid rgb(var(--black));
+	box-shadow: 4px 4px 0 rgba(0, 0, 0, 60%);
+	image-rendering: pixelated;
+	transition: none;
+	cursor: pointer;
+}
+
+.pixel-btn:hover {
+	background-color: #ffec27;
+	color: #1d2b53;
+	transform: translate(-1px, -1px);
+	box-shadow: 5px 5px 0 rgba(0, 0, 0, 60%);
+}
+
+.pixel-btn:active {
+	transform: translate(3px, 3px);
+	box-shadow: 1px 1px 0 rgba(0, 0, 0, 60%);
 }
