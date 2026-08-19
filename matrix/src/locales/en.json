@@ -11,75 +11,75 @@
   "developmentPhilosophy": "Development Philosophy",
   "aiAssistedDevelopment": "AI-Assisted Development",
   "askAi": "Ask AI",
-  "chatGreeting": "Hi! Ask me anything about Yi Chaochao's profile, skills, and experience.",
-  "chatPlaceholder": "Ask about the profile...",
+  "chatGreeting": "Hi! Feel free to ask me anything about Yi Chaochao's profile, skill set, and project experience.",
+  "chatPlaceholder": "Ask a question about the profile...",
   "chatSend": "Send",
   "chatClose": "Close",
   "chatThinking": "Thinking...",
   "chatError": "Something went wrong. Please try again later.",
   "education": "Education",
   "lookingFor": "Looking For",
-  "homeTitle": "Hello, I'm YI CHAOCHAO",
+  "homeTitle": "Hi, I'm YI CHAOCHAO",
   "homeSubtitle": "Senior Software Engineer / Tech Lead",
   "aboutMe": "About Me",
-  "aboutMeText": "I am a software engineer with more than 11 years of professional experience across China and Japan. My primary focus is backend and distributed systems, but I also have hands-on experience across the entire technology stack, including frontend development, databases, cloud infrastructure, Kubernetes, and CI/CD.",
-  "experienceText": "From ZTE to IP Consulting, I've led architecture design and development of enterprise systems across China and Japan, with 6 key positions spanning 2015-2026.",
-  "skillsText": "Backend: Java, Kotlin, Go, Python, Spring Boot, Gin, Microservices. Frontend: React, Next.js, Vue.js. Cloud: AWS, GCP, Kubernetes. Databases: MySQL, Redis, Cassandra, MongoDB.",
-  "technicalLeadershipText": "Throughout my career, I have taken technical leadership responsibilities in addition to individual development, focusing on architecture design, technology selection, and team mentoring.",
-  "developmentPhilosophyText": "I approach engineering problems through a continuous <strong>Why → What → How → Why</strong> cycle.",
+  "aboutMeText": "I am a software engineer with over 11 years of professional experience across China and Japan. Specializing in backend systems and distributed architectures, I also bring comprehensive hands-on expertise across the entire stack—including frontend development, database optimization, cloud-native infrastructure, Kubernetes, and CI/CD pipelines.",
+  "experienceText": "From ZTE to IT consulting, I have dedicated myself to enterprise system architecture and development across China and Japan, taking on 6 key roles from 2015 to 2026.",
+  "skillsText": "Backend: Java, Kotlin, Go, Python, Spring Boot, Gin, Microservices; Frontend: React, Next.js, Vue.js; Cloud: AWS, GCP, Kubernetes; Databases: MySQL, Redis, Cassandra, MongoDB.",
+  "technicalLeadershipText": "Throughout my career, alongside hands-on engineering, I have taken on technical leadership responsibilities—focusing on architectural design, technology selection, engineering standards, and team mentorship.",
+  "developmentPhilosophyText": "I approach engineering challenges through a continuous <strong>Why → What → How → Why</strong> cycle.",
   "dpWhyTitle": "Why",
-  "dpWhyText": "Why does the problem exist? Before implementing a solution, I first identify the root cause, the actual business or technical problem, and the constraints around it.",
+  "dpWhyText": "Why does the problem exist? Before proposing solutions, I identify the root cause, understand the real business and technical challenges, and clarify the constraints.",
   "dpWhatTitle": "What",
-  "dpWhatText": "What needs to be done to solve the problem? I evaluate possible approaches, trade-offs, and the impact of each decision before choosing what to build or change.",
+  "dpWhatText": "What needs to be built? I evaluate potential solutions, weigh trade-offs, and assess the short- and long-term impacts before finalizing the design.",
   "dpHowTitle": "How",
-  "dpHowText": "How should it be implemented, and how can we ensure it works? I consider architecture, implementation details, testing, observability, and operational requirements.",
+  "dpHowText": "How should it be implemented and operated reliably? I focus on architecture, implementation details, testing strategies, observability, and operational complexity.",
   "dpHowItems": [
     "Scalability",
-    "Reliability",
+    "High Reliability & Availability",
     "Maintainability",
-    "Observability",
-    "Performance",
-    "Operational complexity",
-    "Long-term technical debt"
+    "End-to-End Observability",
+    "High Performance & Low Latency",
+    "Operational Complexity Control",
+    "Technical Debt Management"
   ],
   "dpWhyAgainTitle": "Why — Again",
-  "dpWhyAgainText": "Why did the system behave differently from what we expected? After implementation, I verify the result against the original problem and continuously investigate unexpected behavior.",
-  "dpIterationText": "Unexpected behavior is not simply a failure — it is new information. I use it to revisit the <strong>Why</strong>, redefine the <strong>What</strong>, improve the <strong>How</strong>, and continue the cycle.",
+  "dpWhyAgainText": "Why did the system behave unexpectedly? Post-implementation, I validate the results against original goals and continuously investigate unexpected behaviors and edge cases.",
+  "dpIterationText": "Unexpected behavior is not merely a failure—it is valuable feedback. I leverage it to revisit the <strong>Why</strong>, redefine the <strong>What</strong>, refine the <strong>How</strong>, and keep the cycle evolving.",
   "dpIterationCycle": "<strong>Why → What → How → Why → What → How → ...</strong>",
-  "dpSummary": "This approach helps me avoid solving symptoms instead of root causes, while balancing technical quality, business requirements, and long-term system health.",
-  "aiAssistedDevelopmentText": "I actively use modern AI-assisted development techniques throughout the development process: Requirement → Task Decomposition → Context Preparation → Architecture/Design → Implementation → Review → Testing → Optimization.",
-  "educationText": "B.S. in Computer Science / Information Engineering, Civil Aviation Flight University of China, 2011-2015.",
+  "dpSummary": "This structured approach helps me address root causes rather than symptoms, balancing technical excellence, business goals, and long-term system health.",
+  "aiAssistedDevelopmentText": "I actively incorporate modern AI-assisted workflows across the complete development lifecycle: Requirement Analysis → Task Decomposition → Context Preparation → Architecture & Design → Implementation → Code Review → Testing → Performance Optimization.",
+  "educationText": "Bachelor of Engineering in Computer Science & Information Engineering, Civil Aviation Flight University of China, 2011 — 2015.",
   "educationInfo": {
     "school": "Civil Aviation Flight University of China",
-    "degree": "B.S. in Computer Science",
+    "degree": "Bachelor of Science in Computer Science",
     "items": [
-      "C# game",
-      "JSP Web Page",
-      "Student Attendance System"
+      "C# Game Development",
+      "JSP Enterprise Web Application",
+      "Student Attendance Management System"
     ],
-    "technologies": "Technologies: Java, Mysql, C#"
+    "technologies": "Technologies: Java, MySQL, C#"
   },
-  "lookingForText": "I am interested in opportunities where I can contribute as a Senior Software Engineer / Tech Lead, particularly in teams working on backend systems, distributed systems, cloud-native applications, and platform engineering.",
+  "lookingForText": "I am seeking opportunities as a Senior Software Engineer or Tech Lead in teams building backend systems, distributed architectures, cloud-native applications, or platform engineering.",
   "lastUpdated": "Last updated on",
-  "aboutText": "A backend-focused software engineer with more than 11 years of experience across China and Japan, specializing in distributed systems, microservices, and cloud-native architecture, while also covering the full stack from frontend to infrastructure and CI/CD.",
+  "aboutText": "A seasoned backend-focused software engineer with over 11 years of experience in China and Japan, specializing in distributed systems, microservices, and cloud-native architecture, with full-stack delivery capabilities spanning frontend, cloud infrastructure, and CI/CD.",
   "specializations": [
-    "🔧 Designing and improving large-scale backend systems",
-    "🏗️ Distributed systems and microservices architecture",
-    "☁️ Cloud-native systems on AWS and other platforms",
-    "🔧 High-concurrency services and data platforms",
-    "👥 Technical leadership and team support"
+    "🔧 Designing and modernizing large-scale enterprise backend systems",
+    "🏗️ Distributed systems and high-availability microservices architecture",
+    "☁️ Cloud-native system design and infrastructure on AWS / GCP",
+    "🔧 High-concurrency, low-latency services and data platforms",
+    "👥 Technical leadership, architectural decision-making, and team mentorship"
   ],
   "bestThings": [
-    "Design and develop backend systems and APIs",
-    "Design distributed and microservice architectures",
-    "Build high-concurrency and high-load services",
-    "Design cloud-native systems on AWS",
-    "Improve system performance and reliability",
-    "Migrate and redesign legacy systems",
-    "Design database and data storage architectures",
-    "Build CI/CD and automated deployment pipelines",
-    "Lead technical decisions and code reviews",
-    "Work across backend, frontend, infrastructure, and operations"
+    "Designing and developing core enterprise backend systems and high-performance APIs",
+    "Architecting scalable distributed and microservice systems",
+    "Building high-concurrency, mission-critical business services",
+    "Designing resilient cloud-native architectures on AWS and GCP",
+    "Optimizing end-to-end system performance and reliability",
+    "Modernizing and smoothly migrating complex legacy architectures",
+    "Database schema design and data storage optimization for high throughput",
+    "Building robust CI/CD pipelines and DevOps automation",
+    "Leading technical decision-making and rigorous code reviews",
+    "Delivering cross-functional value across backend, frontend, infrastructure, and operations"
   ],
   "skillsCategories": [
     {
@@ -92,48 +92,48 @@
         "Vert.x",
         "Spring Boot",
         "Gin",
-        "REST APIs",
+        "RESTful APIs",
         "Microservices",
-        "Distributed systems",
-        "Concurrent programming",
-        "External API integration"
+        "Distributed Systems",
+        "Concurrent Programming",
+        "Third-party API Integration"
       ]
     },
     {
       "title": "🏗️ Distributed Systems",
       "items": [
-        "Microservice architecture",
-        "Service-to-service communication",
-        "API design",
-        "Distributed data storage",
-        "High-concurrency systems",
-        "Fault analysis",
-        "Performance optimization",
-        "Production troubleshooting",
-        "System modernization"
+        "Microservices Architecture",
+        "Inter-Service Communication / RPC",
+        "API Design",
+        "Distributed Data Stores",
+        "High-Concurrency Systems",
+        "Root Cause Analysis",
+        "Performance Optimization",
+        "Production Troubleshooting",
+        "System Modernization"
       ]
     },
     {
       "title": "☁️ Cloud & Infrastructure",
       "items": [
         "AWS",
-        "Application architecture",
-        "Compute and networking",
-        "Database services",
-        "Storage",
-        "Monitoring",
-        "Production deployment",
-        "High-load architecture",
-        "Cloud migration",
-        "Google Cloud Platform",
+        "Application Architecture",
+        "Compute & Networking",
+        "Database Services",
+        "Storage Solutions",
+        "Observability & Monitoring",
+        "Production Deployments",
+        "Auto-Scaling Architectures",
+        "Cloud Migration",
+        "Google Cloud Platform (GCP)",
         "Alibaba Cloud",
-        "Kubernetes",
+        "Kubernetes (K8s)",
         "Docker",
         "Linux",
-        "CI/CD",
-        "Monitoring",
-        "Logging",
-        "Production operations"
+        "CI/CD Pipelines",
+        "APM Monitoring",
+        "Centralized Logging",
+        "SRE & Production Operations"
       ]
     },
     {
@@ -156,7 +156,7 @@
       ]
     },
     {
-      "title": "🔄 CI/CD",
+      "title": "🔄 DevOps & CI/CD",
       "items": [
         "GitHub Actions",
         "GitLab CI",
@@ -164,17 +164,17 @@
       ]
     },
     {
-      "title": "📋 Development & Architecture",
+      "title": "📋 Engineering Standards & Collaboration",
       "items": [
-        "Microservices",
-        "Distributed Systems",
+        "Microservices Design",
+        "Distributed System Design",
         "Cloud Architecture",
-        "Code Review",
-        "Design review",
-        "Static analysis",
-        "Coding standards",
-        "Technical documentation",
-        "Architecture visualization",
+        "Code Reviews",
+        "Design Reviews",
+        "Static Code Analysis",
+        "Coding Standards",
+        "Technical Documentation / RFCs",
+        "Architecture Visualization",
         "Jira",
         "Confluence",
         "Redmine",
@@ -187,67 +187,67 @@
   ],
   "architectureTitle": "Architecture",
   "architectureItems": [
-    "System architecture design",
-    "Technology selection",
-    "API design",
-    "Database architecture",
-    "Cloud architecture",
-    "Microservice design",
-    "Performance architecture"
+    "Enterprise System Architecture",
+    "Technology Evaluation & Selection",
+    "API & Domain-Driven Design",
+    "Database Architecture",
+    "Cloud-Native Architecture",
+    "Microservice Ecosystem Design",
+    "High-Performance System Design"
   ],
   "engineeringQualityTitle": "Engineering Quality",
   "engineeringQualityItems": [
-    "Code review",
-    "Design review",
-    "Static analysis",
-    "Coding standards",
-    "Technical documentation",
-    "Architecture visualization"
+    "Code Reviews",
+    "Architecture & Design Reviews",
+    "Static Code Analysis & Security Scans",
+    "Coding Guidelines & Standards",
+    "Technical Documentation & Knowledge Base",
+    "Architecture Visualization"
   ],
-  "teamSupportTitle": "Team Support",
+  "teamSupportTitle": "Team Leadership & Support",
   "teamSupportItems": [
-    "Technical mentoring",
-    "Problem solving",
-    "Task decomposition",
-    "Technical decision making",
-    "Development process improvement"
+    "Technical Mentorship & Growth",
+    "Complex Issue Troubleshooting",
+    "Task Decomposition & Estimation",
+    "Technical Decision Making",
+    "Development Workflow Optimization"
   ],
-  "teamSupportTools": "Tools: Jira, Confluence, Redmine, Mermaid, UML, ESLint, SonarLint",
+  "teamSupportTools": "Tooling: Jira, Confluence, Redmine, Mermaid, UML, ESLint, SonarLint",
   "experienceJobs": [
     {
       "period": "2015 — 2016",
-      "company": "ZTE",
+      "company": "ZTE Corporation",
       "role": "Software Engineer",
-      "title": "RCS Integrated Communication System",
-      "description": "Started my career working on cloud communication infrastructure and system operations.",
+      "title": "RCS Rich Communication Services",
+      "description": "Began professional career focusing on cloud communication infrastructure, testing, and datacenter operations automation.",
       "items": [
-        "Developed system monitoring tools",
-        "System testing",
-        "Production maintenance",
-        "Data center deployment",
-        "Automation using Python and Bash"
+        "Developed automated system monitoring and health-check tools",
+        "Conducted system-level and integration testing",
+        "Handled production maintenance and incident mitigation",
+        "Managed datacenter deployments across multiple server nodes",
+        "Authored automation scripts using Python and Bash"
       ],
       "technologies": "Technologies: Java, Python, Bash, Linux, SUSE"
     },
     {
       "period": "2016 — 2018",
       "company": "Nanjing HANHONG",
-      "role": "Software Engineer / Sub Tech Lead",
-      "title": "WeChat Official Account Platform",
-      "description": "Developed enterprise systems for telecom operators, including Web applications and integrations with external systems.",
+      "role": "Software Engineer / Assistant Tech Lead",
+      "title": "WeChat Enterprise Platform & Telecom Services",
+      "description": "Led enterprise web applications and third-party API integrations for leading telecom operators.",
       "items": [
-        "Requirements analysis",
-        "System design",
-        "Web application development",
-        "External system integration",
-        "API/interface design"
+        "Conducted requirement analysis and technical feasibility studies",
+        "Led system design and database modeling",
+        "Developed core modules for enterprise web applications",
+        "Integrated internal operator systems with external partner APIs",
+        "Designed and standardized API interface protocols"
       ],
       "highlightsTitle": "Highlights",
       "highlights": [
-        "Developed systems for China Unicom and China Telecom",
-        "Developed WeChat Mini Programs",
-        "Received Partner Award in 2017",
-        "Received Innovation Cooperation Contribution Award in 2018"
+        "Delivered core production systems for China Unicom and China Telecom",
+        "Engineered high-traffic WeChat Mini-Programs",
+        "Awarded Outstanding Partner Award in 2017",
+        "Awarded Innovative Collaboration Contribution Award in 2018"
       ],
       "technologies": "Technologies: Java, JavaScript, Python, Lua, Redis, MySQL, MongoDB, Linux"
     },
@@ -255,20 +255,20 @@
       "period": "2018 — 2020",
       "company": "China Unicom Shanghai",
       "role": "Tech Lead",
-      "title": "Privilege Center Platform",
-      "description": "Led the development of a large enterprise web platform integrating multiple external services.",
+      "title": "Enterprise Benefits & Privileges Platform",
+      "description": "Led the architecture and engineering of a large-scale enterprise platform integrating numerous external partner ecosystems.",
       "items": [
-        "System architecture and design",
-        "Backend development",
-        "Frontend development",
-        "External API integration",
-        "Technical leadership"
+        "Designed overall system architecture, capacity plans, and microservice splits",
+        "Led core backend service development for high-concurrency workloads",
+        "Supervised frontend engineering and UX optimization",
+        "Managed secure API integrations with enterprise partners",
+        "Provided technical leadership, sprint planning, and team management"
       ],
       "highlightsTitle": "Highlights",
       "highlights": [
-        "Payment Integration: WeChat Pay, Alipay, WoPay",
-        "Identity & Account Integration: JD.com membership system using OAuth 2.0",
-        "Internal Platform: Invoice statistics system"
+        "Payment gateway integrations: WeChat Pay, Alipay, and WoPay",
+        "Identity integration: Seamless member synchronization with JD.com via OAuth 2.0",
+        "Internal platform: Built an automated financial invoice analytics and reporting system"
       ],
       "technologies": "Technologies: Vue.js, JavaScript, Python, Alibaba Cloud, OAuth 2.0"
     },
@@ -276,79 +276,116 @@
       "period": "2020 — 2021",
       "company": "Synergy",
       "role": "Software Engineer",
-      "title": "Enterprise Systems",
-      "description": "Worked on multiple enterprise systems covering data platforms, healthcare systems, and cloud migration.",
+      "title": "Enterprise Core Systems & Cloud Migration",
+      "description": "Contributed to multiple enterprise initiatives covering data platforms, healthcare systems, and cloud modernization.",
       "sections": [
         {
-          "title": "Data Platform / DWH",
-          "description": "DWH architecture and development, Data import tool development, AWS development environment, Testing and deployment"
+          "title": "Enterprise Data Platform / DWH",
+          "description": "Architected DWH data pipelines, built high-throughput ETL ingestion tools, provisioned AWS development environments, and configured automated deployment workflows."
         },
         {
-          "title": "Healthcare System",
-          "description": "Bug fixing, Database performance optimization, New feature development"
+          "title": "Healthcare Management System",
+          "description": "Resolved critical bugs, analyzed slow queries for database performance tuning, and developed new core feature modules."
         },
         {
           "title": "KINTO Nimbus — Cloud Migration & CI/CD",
-          "description": "AWS migration, CI/CD architecture, Performance optimization, New feature development, Deployment automation"
+          "description": "Migrated legacy infrastructure to AWS cloud-native architecture, built end-to-end CI/CD pipelines, optimized service performance, and automated release operations."
         }
       ],
       "technologies": "Technologies: Java, Python, AWS, JavaScript, Node.js, AngularJS, MongoDB"
     },
     {
-      "period": "2021 — 2023",
-      "company": "New Idea",
-      "role": "Software Engineer / Sub Tech Lead",
-      "title": "Rakuten Authentication Storage Migration",
-      "description": "Large-scale system modernization project involving migration of an existing authentication storage architecture.",
+      "period": "2021 — 2022",
+      "company": "NEC China",
+      "role": "Software Engineer",
+      "title": "Odakyu Department Store Loyalty Points System Modernization",
+      "description": "Refactored a mission-critical legacy system managing points issuance, real-time redemption, and financial settlements.",
       "items": [
-        "Technical investigation",
-        "Architecture design",
-        "Detailed design",
-        "Backend development",
-        "Production deployment",
-        "System monitoring",
-        "Incident investigation",
-        "Performance optimization",
-        "Production data maintenance",
-        "Code review",
-        "Technical support"
+        "Refactored backend microservices and delivered high-performance APIs",
+        "Managed zero-downtime production rollouts and automated deployment setups",
+        "Implemented end-to-end production monitoring, APM metrics, and alert setups",
+        "Investigated and eliminated concurrency deadlocks and legacy performance bottlenecks",
+        "Optimized database schema indexing and complex SQL queries"
       ],
       "achievementTitle": "Key Achievement",
-      "achievement": "Successfully migrated a large-scale production storage system from Oracle to Cassandra.",
-      "technologies": "Technologies: Kotlin, Vert.x, Coroutines, Cassandra, Kubernetes, GCP, GitLab CI, ELK"
+      "achievement": "Successfully migrated heavy scheduled batch point-issuance workflows to a high-throughput, event-driven asynchronous architecture powered by Kafka, significantly reducing database spikes and eliminating job processing lags.",
+      "technologies": "Technologies: Java, Spring Boot, MySQL, Redis, Spring Batch, Kafka"
     },
     {
-      "period": "2023 — 2026",
-      "company": "IP Consulting",
-      "role": "Software Engineer / Tech Lead",
-      "title": "Golf Management Platform",
-      "description": "Worked as a Tech Lead on a modern cloud-based golf management platform.",
+      "period": "2022 — 2024",
+      "company": "Rakuten Inc. (Contract)",
+      "role": "Software Engineer / Sub Team Leader",
+      "title": "Rakuten Authentication Storage Modernization & Migration",
+      "description": "Played a key role in modernizing Rakuten's centralized authentication storage layer and migrating large-scale high-throughput production data.",
       "items": [
-        "High-concurrency online services",
-        "Golf course management functionality",
-        "External integrations",
-        "Real-time scoring features"
+        "Built reactive, highly concurrent core authentication APIs",
+        "Designed cross-cluster event-driven messaging pipelines using Kafka",
+        "Implemented database trigger mechanisms for change data capture and dual-writing",
+        "Leveraged Code Generation tools for multi-language client SDKs and boilerplate generation",
+        "Containerized applications and orchestrated declarative deployments on Kubernetes",
+        "Managed deployments across hybrid architectures (Private Cloud & GCP)",
+        "Conducted root cause investigations for distributed production incidents and stress testing",
+        "Executed smooth, zero-loss migration of high-volume production user data",
+        "Provided integration support to tenant services and mentored engineering teammates"
+      ],
+      "achievementTitle": "Key Achievement",
+      "achievement": "Successfully launched the next-generation authentication system and completed seamless aggregation and migration of multi-service production user data with zero downtime.",
+      "technologies": "Technologies: Kotlin, Vert.x, Coroutines, Cassandra, Kafka, Kubernetes, GCP, GitLab CI, ELK Stack"
+    },
+    {
+      "period": "2024 — 2026",
+      "company": "TechnoCraft Inc. (Contract)",
+      "role": "Software Engineer / Tech Lead",
+      "title": "Modern Cloud Golf Operations Platform",
+      "description": "Served as Tech Lead guiding the architecture, technical decisions, and development of a modern cloud-native golf management platform.",
+      "items": [
+        "Engineered high-concurrency, highly available real-time online services",
+        "Architected scalable microservices, DDD boundaries, and service governance",
+        "Designed decoupled asynchronous event-driven workflows",
+        "Led enterprise SSO and third-party identity integrations (OAuth 2.0 / OIDC)",
+        "Established full-link distributed tracing and observability with OpenTelemetry",
+        "Enforced rigorous code reviews and architecture design reviews",
+        "Drove core technical problem resolution and cross-functional collaboration"
       ],
       "keyProjectsTitle": "Key Projects",
       "keyProjects": [
         {
-          "name": "Caddie Evaluation System",
-          "description": "Designed and developed a new caddie evaluation feature"
+          "name": "Caddie Digital Evaluation & Analytics System",
+          "description": "Architected an end-to-end caddie rating platform featuring multi-dimensional analytics radar charts and seamless system integration."
         },
         {
-          "name": "GORA Integration",
-          "description": "Integrated golf course internal scoring systems with GORA"
+          "name": "Rakuten GORA Ecosystem Integration",
+          "description": "Engineered real-time bidirectional synchronization between on-course scoring systems and Rakuten GORA using an event-driven model."
         },
         {
-          "name": "Golf Association Website Migration",
-          "description": "Migrated to AWS"
+          "name": "Golf Association Portal Cloud Migration",
+          "description": "Migrated standalone on-premises servers to AWS, leveraging ALBs and Auto Scaling Groups for dynamic traffic surge management."
         },
         {
-          "name": "Online Competition Platform",
-          "description": "Designed for high-concurrency traffic"
+          "name": "High-Concurrency Online Tournament Platform",
+          "description": "Engineered for high peak traffic, combining event-driven architecture, high-throughput batching pipelines, and sub-second live score distribution via WebSocket."
         }
       ],
-      "technologies": "Technologies: Go, Gin, TypeScript, React, Next.js, AWS, CircleCI"
+      "technologies": "Technologies: Go, Gin, TypeScript, React, Next.js, AWS, CircleCI, Event-Driven Architecture, WebSocket, Redis, MySQL, GitHub Actions"
+    },
+    {
+      "period": "2026 — Present",
+      "company": "NTT DATA (Contract)",
+      "role": "Senior DevOps / Test Automation Engineer",
+      "title": "Corporate Financing System CI/CD Pipeline & UI Automation",
+      "description": "Led the end-to-end CI/CD delivery pipeline construction, containerized runtime environment standardization, and UI test automation architecture for a mission-critical corporate financing platform.",
+      "items": [
+        "Architected and implemented enterprise-grade automated UI testing frameworks using Playwright",
+        "Designed and delivered robust Data-Driven Testing (DDT) suites with dynamic test data management",
+        "Built a fully automated CI/CD lifecycle spanning continuous integration, automated testing, security scanning, and zero-touch continuous deployment",
+        "Structured project GitHub organizations, established branching strategies (Git Flow), and enforced repository security policies",
+        "Managed internal Docker container registries and optimized multi-stage image build pipelines",
+        "Standardized enterprise package management and internal library distribution workflows",
+        "Orchestrated local and staging runtime environments using Docker Compose for seamless environment parity"
+      ],
+      "achievementTitle": "Key Achievement",
+      "achievement": "Successfully established a fully automated pipeline from code commit to testing and release, drastically reducing release cycle times while standardizing developer runtime environments with Docker Compose to boost cross-team engineering velocity.",
+      "technologies": "Technologies: Playwright, Docker, Docker Compose, GitHub Actions, CI/CD, TypeScript, Data-Driven Testing (DDT), Container Registry"
     }
   ]
 }

@@ -9,77 +9,77 @@
   "blog": "博客",
   "technicalLeadership": "技术领导力",
   "developmentPhilosophy": "开发哲学",
-  "aiAssistedDevelopment": "AI辅助开发",
+  "aiAssistedDevelopment": "AI 辅助开发",
   "askAi": "问问 AI",
-  "chatGreeting": "你好！可以问我关于 Yi Chaochao 的个人简介、技能和经验的任何问题。",
-  "chatPlaceholder": "询问关于个人简介的问题...",
+  "chatGreeting": "你好！你可以问我关于 Yi Chaochao 的个人简介、技术栈和项目经验等任何问题。",
+  "chatPlaceholder": "请输入您想了解的问题...",
   "chatSend": "发送",
   "chatClose": "关闭",
   "chatThinking": "思考中...",
-  "chatError": "出错了，请稍后再试。",
-  "education": "教育",
-  "lookingFor": "寻找机会",
-  "homeTitle": "你好，YI CHAOCHAO",
+  "chatError": "服务出现异常，请稍后再试。",
+  "education": "教育背景",
+  "lookingFor": "求职意向",
+  "homeTitle": "你好，我是 YI CHAOCHAO",
   "homeSubtitle": "高级软件工程师 / 技术主管",
   "aboutMe": "关于我",
-  "aboutMeText": "我是一名在中国和日本拥有超过11年专业经验的软件工程师。我的主要方向是后端和分布式系统，同时我也拥有整个技术栈的实践经验，包括前端开发、数据库、云基础设施、Kubernetes 和 CI/CD。",
-  "experienceText": "ZTE 到 IP 顾问，我致力于跨越中国和日本的企业系统架构设计和开发。2015-2026 年间累计 6 个关键职位。",
-  "skillsText": "后端: Java, Kotlin, Go, Python, Spring Boot, Gin, Microservices. 前端: React, Next.js, Vue.js. 云: AWS, GCP, Kubernetes. 数据库: MySQL, Redis, Cassandra, MongoDB。",
-  "technicalLeadershipText": "在我的职业生涯中，除了个人开发之外，我还承担了技术领导职责，专注于架构设计、技术选型和团队指导。",
-  "developmentPhilosophyText": "我通过一个持续的<strong>Why → What → How → Why</strong>循环来处理工程问题。",
-  "dpWhyTitle": "为什么（Why）",
-  "dpWhyText": "问题为什么存在？在实施方案之前，我首先确定根本原因、实际的业务或技术问题，以及围绕它的约束条件。",
-  "dpWhatTitle": "做什么（What）",
-  "dpWhatText": "要解决问题需要做什么？在选择要构建或更改的内容之前，我会评估可能的方案、权衡利弊，以及每个决策的影响。",
-  "dpHowTitle": "怎么做（How）",
-  "dpHowText": "应该如何实现，又如何确保它能正常工作？我会考虑架构、实现细节、测试、可观测性和运维要求。",
+  "aboutMeText": "我是一名在中国和日本拥有超过 11 年研发经验的软件工程师。专注于后端与分布式系统架构，同时具备涵盖前端、数据库、云原生基础设施、Kubernetes 与 CI/CD 自动化流水线的全栈实战能力。",
+  "experienceText": "从 ZTE 到 IT 咨询顾问，长期专注于中日两国的企业级系统架构设计与核心研发。2015 至 2026 年间历任 6 个关键技术岗位。",
+  "skillsText": "后端: Java, Kotlin, Go, Python, Spring Boot, Gin, 微服务; 前端: React, Next.js, Vue.js; 云原生: AWS, GCP, Kubernetes; 数据库: MySQL, Redis, Cassandra, MongoDB。",
+  "technicalLeadershipText": "在职业生涯中，除核心技术攻坚外，我还承担了技术领导职责，主导系统架构设计、核心技术选型、团队工程规范落地与梯队人才培养。",
+  "developmentPhilosophyText": "我推崇通过持续迭代的 <strong>Why → What → How → Why</strong> 闭环模型来驱动工程落地与问题解决。",
+  "dpWhyTitle": "探究原因（Why）",
+  "dpWhyText": "问题为何产生？在制定方案前，首先深挖业务与技术的根本原因（Root Cause），明确边界约束与真实痛点。",
+  "dpWhatTitle": "明确目标（What）",
+  "dpWhatText": "需要构建什么方案？全面评估可行性方案，权衡利弊与技术成本，明确每项决策对系统的短期与长期影响。",
+  "dpHowTitle": "落地实施（How）",
+  "dpHowText": "如何高质量落地并保障可靠运行？综合考量架构演进、代码质量、自动化测试、可观测性及运维复杂度。",
   "dpHowItems": [
     "可扩展性",
-    "可靠性",
+    "高可用与可靠性",
     "可维护性",
-    "可观测性",
-    "性能",
-    "运维复杂度",
-    "长期技术债务"
+    "全链路可观测性",
+    "高性能与低延迟",
+    "运维复杂度控制",
+    "技术债务治理"
   ],
-  "dpWhyAgainTitle": "再次追问为什么（Why — Again）",
-  "dpWhyAgainText": "为什么系统的行为与我们预期的不同？实现之后，我会对照最初的问题验证结果，并持续调查意外行为。",
-  "dpIterationText": "意外行为不是简单的失败——它是新的信息。我会用它来重新审视<strong>为什么（Why）</strong>，重新定义<strong>做什么（What）</strong>，改进<strong>怎么做（How）</strong>，并继续这个循环。",
+  "dpWhyAgainTitle": "持续复盘（Why — Again）",
+  "dpWhyAgainText": "系统行为是否符合预期？上线后对照原始业务目标验证效果，持续追踪排查非预期行为与边缘异常。",
+  "dpIterationText": "非预期现象并非单纯的失败，而是关键的新反馈。我借助这些信息重新审视<strong>原因（Why）</strong>，重构<strong>方案（What）</strong>，优化<strong>实现（How）</strong>，实现系统的持续演进。",
   "dpIterationCycle": "<strong>Why → What → How → Why → What → How → ...</strong>",
-  "dpSummary": "这种方法帮助我避免只解决症状而非根本原因，同时平衡技术质量、业务需求和长期系统健康。",
-  "aiAssistedDevelopmentText": "我在整个开发过程中积极使用现代 AI 辅助开发技术：需求 → 任务分解 → 上下文准备 → 架构/设计 → 实现 → 审查 → 测试 → 优化。",
-  "educationText": "计算机科学/信息工程学士，Civil Aviation Flight University of China, 2011-2015。",
+  "dpSummary": "该方法论帮助我跳出“治标不治本”的陷阱，在技术演进、业务价值与系统长期健康度之间取得最佳平衡。",
+  "aiAssistedDevelopmentText": "在端到端研发全流程中深度融合现代 AI 辅助研发工具：需求分析 → 任务拆解 → 上下文构建 → 架构设计 → 代码编写 → 代码审查 → 自动化测试 → 性能调优。",
+  "educationText": "工学学士（计算机科学与技术 / 信息工程），中国民用航空飞行学院，2011 — 2015。",
   "educationInfo": {
     "school": "中国民用航空飞行学院",
-    "degree": "计算机科学学士",
+    "degree": "计算机科学与技术 学士",
     "items": [
-      "C# 游戏",
-      "JSP 网页",
-      "学生考勤系统"
+      "基于 C# 的游戏开发",
+      "JSP 企业级 Web 平台",
+      "高校学生考勤管理系统"
     ],
-    "technologies": "技术: Java, Mysql, C#"
+    "technologies": "技术栈: Java, MySQL, C#"
   },
-  "lookingForText": "我有兴趣在从事后端系统、分布式系统、云原生应用和平台工程的团队中担任高级软件工程师/技术主管的机会。",
+  "lookingForText": "目前寻求后端架构、分布式系统、云原生应用或平台工程方向的高级软件工程师 / 技术主管（Tech Lead）职位。",
   "lastUpdated": "最后更新于",
-  "aboutText": "一名专注于后端的软件工程师，在中国和日本拥有超过11年的经验，擅长分布式系统、微服务和云原生架构，同时覆盖从前端到基础设施和 CI/CD 的全栈领域。",
+  "aboutText": "专注于后端架构的资深工程师，在中日两国拥有 11 年以上研发经验。擅长分布式微服务架构与云原生系统设计，同时具备全栈交付、云基础设施治理与 CI/CD 建设能力。",
   "specializations": [
-    "🔧 设计和改进大规模后端系统",
-    "🏗️ 分布式系统和微服务架构",
-    "☁️ 基于 AWS 和其他平台的云原生系统",
-    "🔧 高并发服务和数据平台",
-    "👥 技术领导和团队支持"
+    "🔧 大规模企业级后端系统设计与重构",
+    "🏗️ 高可用分布式与微服务架构设计",
+    "☁️ 基于 AWS / GCP 的云原生基础设施架构",
+    "🔧 高并发、低延迟核心业务与数据平台研发",
+    "👥 技术团队管理、架构决策与人才梯队建设"
   ],
   "bestThings": [
-    "设计和开发后端系统与 API",
-    "设计分布式和微服务架构",
-    "构建高并发和高负载服务",
-    "在 AWS 上设计云原生系统",
-    "提升系统性能和可靠性",
-    "迁移和重新设计遗留系统",
-    "设计数据库和数据存储架构",
-    "构建 CI/CD 和自动化部署流水线",
-    "主导技术决策和代码审查",
-    "跨后端、前端、基础设施和运维开展工作"
+    "企业级后端核心系统与高性能 API 设计与研发",
+    "大规模分布式与微服务架构治理与落地",
+    "高并发、高可用核心交易与业务平台构建",
+    "基于 AWS / GCP 的高可用云原生架构设计",
+    "全链路性能调优、瓶颈分析与系统高可用加固",
+    "复杂遗留系统现代化重构与无缝平滑迁移",
+    "高并发场景下的数据存储模型与分库分表设计",
+    "自动化 CI/CD 流水线与 DevOps 基础设施搭建",
+    "把控核心技术方向、架构评审与代码审查（Code Review）",
+    "具备跨后端、前端、DevOps 与基础运维的全栈协同交付能力"
   ],
   "skillsCategories": [
     {
@@ -92,52 +92,52 @@
         "Vert.x",
         "Spring Boot",
         "Gin",
-        "REST API",
-        "微服务",
-        "分布式系统",
-        "并发编程",
-        "外部 API 集成"
-      ]
-    },
-    {
-      "title": "🏗️ 分布式系统",
-      "items": [
+        "RESTful API",
         "微服务架构",
-        "服务间通信",
-        "API 设计",
-        "分布式数据存储",
-        "高并发系统",
-        "故障分析",
-        "性能优化",
-        "生产环境故障排查",
-        "系统现代化"
+        "分布式系统",
+        "高并发编程",
+        "第三方 API 深度集成"
       ]
     },
     {
-      "title": "☁️ 云与基础设施",
+      "title": "🏗️ 分布式架构",
+      "items": [
+        "微服务治理",
+        "RPC / 服务间通信",
+        "RESTful / API 设计",
+        "分布式数据存储",
+        "高并发高可用系统",
+        "故障根因分析",
+        "全链路性能优化",
+        "线上重大故障排查",
+        "遗留系统现代化改造"
+      ]
+    },
+    {
+      "title": "☁️ 云原生与基础设施",
       "items": [
         "AWS",
-        "应用架构",
-        "计算与网络",
-        "数据库服务",
-        "存储",
-        "监控",
-        "生产部署",
-        "高负载架构",
-        "云迁移",
-        "Google Cloud Platform",
-        "阿里云",
-        "Kubernetes",
+        "系统架构设计",
+        "计算与网络虚拟化",
+        "托管数据库服务",
+        "对象与分布式存储",
+        "可观测性监控",
+        "生产环境发布部署",
+        "弹性扩缩容架构",
+        "云上架构迁移",
+        "Google Cloud Platform (GCP)",
+        "阿里云 (Alibaba Cloud)",
+        "Kubernetes (K8s)",
         "Docker",
         "Linux",
-        "CI/CD",
-        "监控",
-        "日志",
-        "生产运维"
+        "CI/CD 流水线",
+        "APM 监控与告警",
+        "集中式日志分析",
+        "生产环境 SRE 运维"
       ]
     },
     {
-      "title": "🎨 前端工程",
+      "title": "🎨 前端开发",
       "items": [
         "TypeScript",
         "JavaScript",
@@ -147,7 +147,7 @@
       ]
     },
     {
-      "title": "💾 数据库",
+      "title": "💾 数据存储",
       "items": [
         "MySQL",
         "Redis",
@@ -156,7 +156,7 @@
       ]
     },
     {
-      "title": "🔄 CI/CD",
+      "title": "🔄 DevOps 与 CI/CD",
       "items": [
         "GitHub Actions",
         "GitLab CI",
@@ -164,17 +164,17 @@
       ]
     },
     {
-      "title": "📋 开发与架构",
+      "title": "📋 工程规范与协作",
       "items": [
-        "微服务",
-        "分布式系统",
-        "云架构",
-        "代码审查",
-        "设计评审",
-        "静态分析",
-        "编码规范",
-        "技术文档",
-        "架构可视化",
+        "微服务架构规范",
+        "分布式系统设计",
+        "云原生架构设计",
+        "代码审查 (Code Review)",
+        "架构方案评审",
+        "静态代码分析",
+        "团队编码规范建设",
+        "技术文档与 RFC 编写",
+        "架构可视化建模",
         "Jira",
         "Confluence",
         "Redmine",
@@ -185,192 +185,207 @@
       ]
     }
   ],
-  "architectureTitle": "架构",
+  "architectureTitle": "架构设计",
   "architectureItems": [
-    "系统架构设计",
-    "技术选型",
-    "API 设计",
-    "数据库架构",
-    "云架构",
-    "微服务设计",
-    "性能架构"
+    "高可用系统架构设计",
+    "技术栈评估与核心选型",
+    "API 与领域驱动设计",
+    "分布式数据库架构",
+    "云原生高弹性架构",
+    "微服务服务网格设计",
+    "高性能高并发架构"
   ],
-  "engineeringQualityTitle": "工程质量",
+  "engineeringQualityTitle": "工程质量保障",
   "engineeringQualityItems": [
-    "代码审查",
-    "设计评审",
-    "静态分析",
-    "编码规范",
-    "技术文档",
-    "架构可视化"
+    "代码审查 (Code Review)",
+    "技术方案评审",
+    "静态代码分析与安全扫描",
+    "研发与代码规范制定",
+    "技术文档与知识库维护",
+    "架构可视化建模"
   ],
-  "teamSupportTitle": "团队支持",
+  "teamSupportTitle": "团队管理与赋能",
   "teamSupportItems": [
-    "技术指导",
-    "问题解决",
-    "任务分解",
-    "技术决策",
-    "开发流程改进"
+    "技术指导与梯队培养",
+    "核心疑难问题攻坚",
+    "任务精细化拆解与排期",
+    "重大技术决策把控",
+    "敏捷与研发流程改进"
   ],
-  "teamSupportTools": "工具: Jira, Confluence, Redmine, Mermaid, UML, ESLint, SonarLint",
+  "teamSupportTools": "工具链: Jira, Confluence, Redmine, Mermaid, UML, ESLint, SonarLint",
   "experienceJobs": [
     {
       "period": "2015 — 2016",
       "company": "中兴通讯 (ZTE)",
       "role": "软件工程师",
       "title": "RCS 融合通信系统",
-      "description": "职业生涯始于云通信基础设施和系统运维领域。",
+      "description": "职业生涯启程于云通信基础设施研发与大型数据中心运维自动化领域。",
       "items": [
-        "开发系统监控工具",
-        "系统测试",
-        "生产维护",
-        "数据中心部署",
-        "使用 Python 和 Bash 实现自动化"
+        "开发自动化系统监控与健康巡检工具",
+        "负责通信系统集成测试与验收",
+        "保障生产环境高可用运行与日常运维",
+        "参与多数据中心节点的系统部署与交付",
+        "使用 Python 和 Bash 编写运维自动化脚本"
       ],
-      "technologies": "技术: Java, Python, Bash, Linux, SUSE"
+      "technologies": "技术栈: Java, Python, Bash, Linux, SUSE"
     },
     {
       "period": "2016 — 2018",
       "company": "南京汉宏 (Nanjing HANHONG)",
       "role": "软件工程师 / 副技术主管",
-      "title": "微信公众号平台",
-      "description": "为电信运营商开发企业系统，包括 Web 应用和外部系统集成。",
+      "title": "微信公众号与运营商服务平台",
+      "description": "主导电信运营商级企业 Web 平台研发及第三方系统深度对接。",
       "items": [
-        "需求分析",
-        "系统设计",
-        "Web 应用开发",
-        "外部系统集成",
-        "API/接口设计"
+        "主导业务需求分析与可行性评估",
+        "负责系统整体架构设计与核心数据库建模",
+        "负责企业级 Web 应用核心模块研发",
+        "对接运营商核心系统及第三方开放平台",
+        "规范 API 接口协议与安全交互标准"
       ],
-      "highlightsTitle": "亮点",
+      "highlightsTitle": "关键亮点",
       "highlights": [
-        "为中国联通和中国电信开发系统",
-        "开发微信小程序",
-        "2017 年获合作伙伴奖",
-        "2018 年获创新合作贡献奖"
+        "主导中国联通、中国电信核心业务系统的落地交付",
+        "主导高活跃微信小程序核心架构与功能研发",
+        "荣获 2017 年度优秀合作伙伴奖",
+        "荣获 2018 年度创新合作杰出贡献奖"
       ],
-      "technologies": "技术: Java, JavaScript, Python, Lua, Redis, MySQL, MongoDB, Linux"
+      "technologies": "技术栈: Java, JavaScript, Python, Lua, Redis, MySQL, MongoDB, Linux"
     },
     {
       "period": "2018 — 2020",
       "company": "中国联通上海",
       "role": "技术主管",
-      "title": "特权中心平台",
-      "description": "主导一个集成多项外部服务的大型企业 Web 平台的开发。",
+      "title": "联通特权中心平台",
+      "description": "统筹主导集成多方异构核心服务的大型企业级综合权益平台研发。",
       "items": [
-        "系统架构与设计",
-        "后端开发",
-        "前端开发",
-        "外部 API 集成",
-        "技术领导"
+        "主导全套系统架构设计、容量规划与微服务拆分",
+        "主导高并发核心后端业务模块的研发",
+        "主导前端工程化建设与用户体验优化",
+        "负责与大型第三方生态平台的 API 安全集成",
+        "全面负责研发团队日常技术管理与进度把控"
       ],
-      "highlightsTitle": "亮点",
+      "highlightsTitle": "关键亮点",
       "highlights": [
-        "支付集成: 微信支付、支付宝、WoPay",
-        "身份与账户集成: 基于 OAuth 2.0 的京东会员系统",
-        "内部平台: 发票统计系统"
+        "支付中台打通: 深度集成微信支付、支付宝及沃支付 (WoPay)",
+        "用户账户体系互通: 基于 OAuth 2.0 协议打通京东核心会员体系",
+        "内部数据中台: 搭建自动化发票统计与财务结算支撑平台"
       ],
-      "technologies": "技术: Vue.js, JavaScript, Python, 阿里云, OAuth 2.0"
+      "technologies": "技术栈: Vue.js, JavaScript, Python, 阿里云, OAuth 2.0"
     },
     {
       "period": "2020 — 2021",
       "company": "Synergy",
       "role": "软件工程师",
-      "title": "企业系统",
-      "description": "参与多个企业系统，涵盖数据平台、医疗系统和云迁移。",
+      "title": "企业级核心系统与云上重构",
+      "description": "深度参与数据中台、医疗核心业务系统及上云迁移等多个重点企业级项目。",
       "sections": [
         {
-          "title": "数据平台 / DWH",
-          "description": "DWH 架构与开发、数据导入工具开发、AWS 开发环境、测试与部署"
+          "title": "企业数据中台 / DWH",
+          "description": "负责数仓（DWH）架构设计与开发、高性能 ETL 数据接入工具研发、基于 AWS 的云上开发环境搭建及 CI/CD 自动化部署交付"
         },
         {
-          "title": "医疗系统",
-          "description": "缺陷修复、数据库性能优化、新功能开发"
+          "title": "医疗管理系统",
+          "description": "主导核心业务缺陷排查、数据库慢查询分析与深度性能调优、核心新业务功能模块研发"
         },
         {
-          "title": "KINTO Nimbus — 云迁移与 CI/CD",
-          "description": "AWS 迁移、CI/CD 架构、性能优化、新功能开发、部署自动化"
+          "title": "KINTO Nimbus — 上云迁移与 CI/CD 改造",
+          "description": "主导核心系统向 AWS 云原生架构迁移、搭建全套 CI/CD 自动化流水线、系统性能调优及自动化发布体系建设"
         }
       ],
-      "technologies": "技术: Java, Python, AWS, JavaScript, Node.js, AngularJS, MongoDB"
+      "technologies": "技术栈: Java, Python, AWS, JavaScript, Node.js, AngularJS, MongoDB"
     },
     {
       "period": "2021 — 2022",
       "company": "NEC China",
       "role": "软件工程师",
-      "title": "小田急商场积分系统重构",
-      "description": "对涉及积分赋予、积分使用和积分结算的现有系统进行重构。",
+      "title": "小田急百货积分商城核心系统重构",
+      "description": "对集积分发放、实时消费抵扣与财务结算于一体的大型复杂旧积分系统进行全方位重构改造。",
       "items": [
-        "后端开发",
-        "生产部署",
-        "系统监控",
-        "故障调查",
-        "性能优化",
-        "生产数据维护",
-        "代码审查",
-        "技术支持"
+        "主导核心后端模块重构与高性能 API 交付",
+        "负责生产环境无缝割接与自动化部署落地",
+        "构建生产链路监控、告警体系与指标看板",
+        "深入排查并解决历史线上并发死锁与性能瓶颈",
+        "针对核心数据表进行索引重构与 SQL 查询深度优化"
       ],
-      "achievementTitle": "关键成果",
-      "achievement": "成功将积分赋予的定期批处理从定期批处理迁移到事件驱动异步处理。",
-      "technologies": "技术: Java, SpringBoot, MySQL, Redis, Spring Batch, Kafka"
+      "achievementTitle": "核心成就",
+      "achievement": "成功将原有的高负荷定时批处理积分发放链路，重构成基于 Kafka 的高吞吐、低延迟事件驱动异步架构，大幅减轻数据库峰值压力并消除作业堆积延时。",
+      "technologies": "技术栈: Java, Spring Boot, MySQL, Redis, Spring Batch, Kafka"
     },
     {
       "period": "2022 — 2024",
-      "company": "Rakuten Inc. (contract)",
-      "role": "软件工程师 / Sub Team Leader",
-      "title": "Rakuten认证存储重构与迁移",
-      "description": "涉及现有认证存储架构迁移的大型系统现代化项目。",
+      "company": "Rakuten Inc. (外包契约)",
+      "role": "软件工程师 / 副组长 (Sub Team Leader)",
+      "title": "Rakuten 核心统一认证系统现代化重构与数据迁移",
+      "description": "深度参与涉及乐天集团核心统一认证存储层架构升级与海量高吞吐数据迁移的现代化改造工程。",
       "items": [
-        "高并发API服务",
-        "事件驱动架构",
-        "数据库触发器",
-        "Code Generation",
-        "k8s部署",
-        "私有/共有云部署",
-        "故障调查",
-        "性能优化",
-        "生产数据维护",
-        "技术支持"
+        "基于异步响应式架构构建千万级高并发认证核心 API 服务",
+        "基于 Kafka 构建跨数据中心的高可用事件驱动消息体系",
+        "基于数据库触发器 (Triggers) 实现旧库变更捕获与异构双写同步",
+        "利用 Code Generation 技术自动化生成多语言 SDK 与服务骨架",
+        "负责核心组件在 Kubernetes 容器化环境下的部署与声明式编排",
+        "主导私有云与公共云混合架构的部署实施与容灾方案",
+        "排查线上复杂分布式链路故障并实施性能压测调优",
+        "保障千万级生产环境核心账户数据的安全迁移与平滑割接",
+        "为多业务线提供接入技术支持与团队日常工程指导"
       ],
-      "achievementTitle": "关键成果",
-      "achievement": "成功发布全新的认证系统并且将大型生产系统数据从多个服务聚合迁移到新系统中。",
-      "technologies": "技术: Kotlin, Vert.x, Coroutines, Cassandra,Kafka, Kubernetes, GCP, GitLab CI, ELK"
+      "achievementTitle": "核心成就",
+      "achievement": "成功主导全新统一认证系统平稳上线，实现多业务线异构海量认证数据在零停机（Zero Downtime）前提下的聚合迁移与平滑切换。",
+      "technologies": "技术栈: Kotlin, Vert.x, Coroutines, Cassandra, Kafka, Kubernetes, GCP, GitLab CI, ELK Stack"
     },
     {
       "period": "2024 — 2026",
-      "company": "TechnoCraft Inc. (contract)",
-      "role": "软件工程师 / 技术Leader",
-      "title": "高尔夫系统运营平台",
-      "description": "现代化的云端高尔夫运营平台担任技术Leader。",
+      "company": "TechnoCraft Inc. (外包契约)",
+      "role": "软件工程师 / 技术主管 (Tech Leader)",
+      "title": "现代化高尔夫云端智慧运营中台",
+      "description": "作为技术主管（Tech Leader），统筹负责现代化云端高尔夫运营中台的架构演进、技术选型及核心研发交付。",
       "items": [
-        "高并发在线服务",
-        "微服务架构设计",
-        "事件驱动架构",
-        "外部OAuth2集成",
-        "Tracing和监控",
-        "代码审查",
-        "技术支持"
+        "主导高并发、高可用在线业务服务的设计与落地",
+        "主导核心微服务架构拆分、DDD 领域建模与服务网格治理",
+        "设计基于消息队列的异步解耦事件驱动架构",
+        "主导第三方统一身份认证中心（OAuth 2.0 / OIDC）的对接与安全落地",
+        "基于 OpenTelemetry 搭建全链路分布式追踪 (Tracing) 与 APM 监控体系",
+        "全面把控代码质量，主导团队代码审查与技术方案评审",
+        "负责关键技术攻坚、疑难排查及跨职能团队协同"
       ],
-      "keyProjectsTitle": "关键项目",
+      "keyProjectsTitle": "核心落地项目",
       "keyProjects": [
         {
-          "name": "球童评价系统",
-          "description": "设计并开发新的球童评价功能, 绘制球童评价图表, 并与现有系统集成"
+          "name": "球童数字化评价与多维分析系统",
+          "description": "主导端到端设计与实现球童综合评价体系，实现多维度评分雷达图渲染，并与现有业务系统无缝打通"
         },
         {
-          "name": "GORA 集成",
-          "description": "将球场内部计分系统与 Rakuten GORA 集成, 使用事件驱动模型"
+          "name": "乐天 GORA (Rakuten GORA) 开放生态深度集成",
+          "description": "设计并落地球场内部实时记分系统与乐天 GORA 平台的双向同步，采用事件驱动模型保障数据实时一致性"
         },
         {
-          "name": "高尔夫协会网站迁移",
-          "description": "将单机器服务迁移到 AWS, 并且使用负载均衡，并更具体策略自动扩展"
+          "name": "高尔夫行业协会官网云原生架构迁移",
+          "description": "将传统单机架构整体迁移上云至 AWS，结合 ALB 负载均衡与 Auto Scaling 弹性伸缩组，实现流量洪峰下的自动伸缩"
         },
         {
-          "name": "在线赛事平台",
-          "description": "针对高并发流量设计，使用事件驱动，与定期批处理和实时计分系统集成"
+          "name": "大规模在线高尔夫赛事竞技实时平台",
+          "description": "专为赛事高峰期超大并发流量设计，融合事件驱动架构、高吞吐批处理流水线与基于 WebSocket 的毫秒级实时比分推送系统"
         }
       ],
-      "technologies": "技术: Go, Gin, TypeScript, React, Next.js, AWS, CircleCI, EventDriven Architecture, WebSocket, Redis, MySQL, GitHub Actions"
+      "technologies": "技术栈: Go, Gin, TypeScript, React, Next.js, AWS, CircleCI, 事件驱动架构, WebSocket, Redis, MySQL, GitHub Actions"
+    },
+    {
+      "period": "2026 — 至今",
+      "company": "NTT DATA (外包契约)",
+      "role": "高级 DevOps / 测试自动化工程师",
+      "title": "法人融资核心系统 CI/CD 体系构建与 UI 自动化测试",
+      "description": "负责法人融资业务系统的端到端 CI/CD 自动化交付流水线建设、容器化运行环境标准化及 UI 自动化测试架构设计。",
+      "items": [
+        "基于 Playwright 搭建高可靠的企业级 UI 自动化测试框架",
+        "设计并落地基于测试数据分离的数据驱动测试（DDT）方案",
+        "构建集自动构建、自动化测试、静态扫描及自动化发布于一体的全流程 CI/CD 闭环",
+        "主导项目组 GitHub 组织架构、代码分支策略（Git Flow）与权限安全管控体系建设",
+        "搭建私有 Docker 镜像仓库管理体系与容器构建流水线",
+        "规范内部依赖包管理（Package Management）与发布流程",
+        "推进项目本地与集成测试运行环境的 Docker Compose 容器化编排与标准化"
+      ],
+      "achievementTitle": "关键成果",
+      "achievement": "实现了从代码提交到自动化测试与发布的全流程自动化，大幅缩短版本迭代交付周期，并借助 Docker Compose 统一多环境依赖，显著提升了研发与测试团队的协同效率。",
+      "technologies": "技术栈: Playwright, Docker, Docker Compose, GitHub Actions, CI/CD, TypeScript, 数据驱动测试 (DDT), Container Registry"
     }
   ]
 }
