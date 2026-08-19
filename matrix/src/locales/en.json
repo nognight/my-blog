@@ -378,7 +378,7 @@
         "Architected and implemented enterprise-grade automated UI testing frameworks using Playwright",
         "Designed and delivered robust Data-Driven Testing (DDT) suites with dynamic test data management",
         "Built a fully automated CI/CD lifecycle spanning continuous integration, automated testing, security scanning, and zero-touch continuous deployment",
-        "Structured project GitHub organizations, established branching strategies (Git Flow), and enforced repository security policies",
+        "Structured project GitLab organizations, established branching strategies (Git Flow), and enforced repository security policies",
         "Managed internal Docker container registries and optimized multi-stage image build pipelines",
         "Standardized enterprise package management and internal library distribution workflows",
         "Orchestrated local and staging runtime environments using Docker Compose for seamless environment parity"
