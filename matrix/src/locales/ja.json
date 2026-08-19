@@ -385,7 +385,7 @@
       ],
       "achievementTitle": "主な成果",
       "achievement": "コードコミットから自動テスト、本番デプロイに至る全プロセスの自動化を完遂し、リリースサイクルを大幅に短縮。Docker Compose による環境統一により、チーム全体の開発・検証効率を飛躍的に向上させました。",
-      "technologies": "技術スタック: Playwright, Docker, Docker Compose, GitHub Actions, CI/CD, TypeScript, データ駆動テスト (DDT), Container Registry"
+      "technologies": "技術スタック: Playwright, Docker, Docker Compose, GitLab CI, CI/CD, データ駆動テスト (DDT), Container Registry"
     }
   ]
 }

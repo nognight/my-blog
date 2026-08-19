@@ -385,7 +385,7 @@
       ],
       "achievementTitle": "Key Achievement",
       "achievement": "Successfully established a fully automated pipeline from code commit to testing and release, drastically reducing release cycle times while standardizing developer runtime environments with Docker Compose to boost cross-team engineering velocity.",
-      "technologies": "Technologies: Playwright, Docker, Docker Compose, GitHub Actions, CI/CD, TypeScript, Data-Driven Testing (DDT), Container Registry"
+      "technologies": "Technologies: Playwright, Docker, Docker Compose, GitLab CI, CI/CD, Data-Driven Testing (DDT), Container Registry"
     }
   ]
 }

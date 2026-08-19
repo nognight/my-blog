@@ -385,7 +385,7 @@
       ],
       "achievementTitle": "关键成果",
       "achievement": "实现了从代码提交到自动化测试与发布的全流程自动化，大幅缩短版本迭代交付周期，并借助 Docker Compose 统一多环境依赖，显著提升了研发与测试团队的协同效率。",
-      "technologies": "技术栈: Playwright, Docker, Docker Compose, GitHub Actions, CI/CD, TypeScript, 数据驱动测试 (DDT), Container Registry"
+      "technologies": "技术栈: Playwright, Docker, Docker Compose, GitLab CI, CI/CD, 数据驱动测试 (DDT), Container Registry"
     }
   ]
 }
