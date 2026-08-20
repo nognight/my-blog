@@ -47,7 +47,7 @@
   "dpIterationText": "Unexpected behavior is not merely a failure—it is valuable feedback. I leverage it to revisit the <strong>Why</strong>, redefine the <strong>What</strong>, refine the <strong>How</strong>, and keep the cycle evolving.",
   "dpIterationCycle": "<strong>Why → What → How → Why → What → How → ...</strong>",
   "dpSummary": "This structured approach helps me address root causes rather than symptoms, balancing technical excellence, business goals, and long-term system health.",
-  "aiAssistedDevelopmentText": "I actively incorporate modern AI-assisted workflows across the complete development lifecycle: Requirement Analysis → Task Decomposition → Context Preparation → Architecture & Design → Implementation → Code Review → Testing → Performance Optimization.",
+  "aiAssistedDevelopmentText": "Using AI Agents and Agent Skills in daily development, I turn requirement analysis, task breakdown, context management, implementation, code review, testing, and performance optimization into reusable engineering workflows.",
   "educationText": "Bachelor of Engineering in Computer Science & Information Engineering, Civil Aviation Flight University of China, 2011 — 2015.",
   "educationInfo": {
     "school": "Civil Aviation Flight University of China",

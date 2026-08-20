@@ -47,7 +47,7 @@
   "dpIterationText": "非预期现象并非单纯的失败，而是关键的新反馈。我借助这些信息重新审视<strong>原因（Why）</strong>，重构<strong>方案（What）</strong>，优化<strong>实现（How）</strong>，实现系统的持续演进。",
   "dpIterationCycle": "<strong>Why → What → How → Why → What → How → ...</strong>",
   "dpSummary": "该方法论帮助我跳出“治标不治本”的陷阱，在技术演进、业务价值与系统长期健康度之间取得最佳平衡。",
-  "aiAssistedDevelopmentText": "在端到端研发全流程中深度融合现代 AI 辅助研发工具：需求分析 → 任务拆解 → 上下文构建 → 架构设计 → 代码编写 → 代码审查 → 自动化测试 → 性能调优。",
+  "aiAssistedDevelopmentText": "使用 AI Agent 与 Agent Skill 辅助日常研发，将需求分析、任务拆解、上下文管理、代码实现、Review、测试与性能优化沉淀为可复用的工程化工作流。",
   "educationText": "工学学士（计算机科学与技术 / 信息工程），中国民用航空飞行学院，2011 — 2015。",
   "educationInfo": {
     "school": "中国民用航空飞行学院",

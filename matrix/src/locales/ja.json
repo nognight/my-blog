@@ -47,7 +47,7 @@
   "dpIterationText": "想定外の挙動は単なる失敗ではなく、貴重なフィードバックです。それを手掛かりに<strong>Why（なぜ）</strong>を再検討し、<strong>What（何を）</strong>を再定義し、<strong>How（どのように）</strong>を改善してサイクルを回し続けます。",
   "dpIterationCycle": "<strong>Why → What → How → Why → What → How → ...</strong>",
   "dpSummary": "このアプローチにより、対症療法を避け、技術的品質、ビジネス価値、システムの長期的な健全性を高水準で両立させています。",
-  "aiAssistedDevelopmentText": "要件分析 → タスク分解 → コンテキスト設計 → アーキテクチャ設計 → 実装 → コードレビュー → テスト自動化 → チューニングに至る全開発工程で、最新のAI支援手法を積極的に導入・活用しています。",
+  "aiAssistedDevelopmentText": "AI Agent と Agent Skill を日々の開発に活用し、要件分析、タスク分解、コンテキスト管理、コード実装、レビュー、テスト、パフォーマンス最適化までを、再利用可能なエンジニアリングワークフローとして体系化しています。",
   "educationText": "工学士（コンピュータサイエンス / 情報工学）、中国民用航空飛行学院、2011年 — 2015年。",
   "educationInfo": {
     "school": "中国民用航空飛行学院",
